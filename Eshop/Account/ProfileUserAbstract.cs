@@ -13,5 +13,22 @@ namespace Eshop.Account
 
         public int ProfileId { get { return _profileId; } set { _profileId = value; } }
         public int UserId { get { return _userId;} set { _userId = value; } }
+
+        public void DeleteAccount()
+        {
+
+        }
+
+        public void EditAccount()
+        {
+
+        }
+
+        public void Save()
+        {
+
+        }
+
+
     }
 }

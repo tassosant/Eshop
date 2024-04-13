@@ -17,7 +17,15 @@ namespace Eshop.Account
         public string UserName { get { return _username; } set { _username = value; } }
         public string Password { get { return _password; } set { _password = value; } } 
         
-        
+        public void OpenCart()
+        {
+
+        }
+
+        public void Logout()
+        {
+
+        }
 
 
         

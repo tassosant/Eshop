@@ -17,5 +17,29 @@ namespace Eshop.CashRegister
         public Dictionary<int, int> Products { get { return _products; } set { _products = value; } }
         public float price { get { return _price;} set { _price = value; } }
         
+        public void AddToCart()
+        {
+
+        }
+
+        public void RemoveFromCart()
+        {
+
+        }
+
+        public void UpdateQuantity()
+        {
+
+        }
+
+        public void UpdatePrice()
+        {
+
+        }
+
+        public void ProceedToChekcout()
+        {
+
+        }
     }
 }
