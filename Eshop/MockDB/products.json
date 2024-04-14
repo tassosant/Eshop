@@ -1,0 +1,10 @@
+﻿{
+  "products": [
+    {
+      "ProductId": 0,
+      "CategoryId": 0,
+      "ProductName": "",
+      "Price": 0.0
+    }
+  ]
+}
