@@ -1,3 +1,5 @@
+using Eshop.MockDB;
+
 namespace Eshop
 {
     public partial class Form1 : Form
@@ -5,6 +7,9 @@ namespace Eshop
         public Form1()
         {
             InitializeComponent();
+            JSONParser parser = new JSONParser();
+            parser.ParseCartsFileToCarts();
+            
         }
     }
 }

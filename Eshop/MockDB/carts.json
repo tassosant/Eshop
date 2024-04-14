@@ -1,14 +1,23 @@
-﻿{
-  "carts": [
+﻿  [
     {
-      "CartId": "",
-      "UserId": "",
-      "Products": [
+      "CartId": 0,
+      "UserId": 0,
+      "Products": 
         {
-          "ProductId": 1,
-          "Items": 0
+          "1": 10,
+          "101": 100
         }
-      ]
+      
+    },
+    {
+      "CartId": 1,
+      "UserId": 1,
+      "Products": 
+        {
+          "2": 20,
+          "201": 200
+        }
+      
     }
   ]
-}
+

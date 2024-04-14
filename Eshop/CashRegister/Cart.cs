@@ -10,8 +10,10 @@ namespace Eshop.CashRegister
     internal class Cart
     {
         public int UserId { get; set; }
+
+        public int CartId { get; set; }
         public Dictionary<int,int> Products { get; set; } //productId,items/product
-        public float Price { get; set; }
+        //public float Price { get; set; }
 
         
         
