@@ -12,7 +12,9 @@ namespace Eshop.CashRegister
         public int UserId { get; set; }
         public int CartId { get; set; }
 
-        
+        public int OrderStatus { get; set; }
+
+        public float Price { get; set; }        
 
         public void Pay()
         {

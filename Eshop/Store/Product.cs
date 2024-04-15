@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Eshop.Store
 {
-    internal abstract class Product
+    internal class Product
     {
         public int ProductId { get; set; }
         public int CategoryId { get; set; }

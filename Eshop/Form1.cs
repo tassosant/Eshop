@@ -9,6 +9,7 @@ namespace Eshop
             InitializeComponent();
             JSONParser parser = new JSONParser();
             parser.ParseCartsFileToCarts();
+            parser.AddToCarts();
             
         }
     }

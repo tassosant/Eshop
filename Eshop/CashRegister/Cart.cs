@@ -13,10 +13,10 @@ namespace Eshop.CashRegister
 
         public int CartId { get; set; }
         public Dictionary<int,int> Products { get; set; } //productId,items/product
-        //public float Price { get; set; }
+        
 
-        
-        
+
+
         public void AddToCart()
         {
 

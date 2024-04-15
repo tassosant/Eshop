@@ -1,5 +1,4 @@
-﻿{
-  "roles": [
+﻿ [
     {
       "RoleId": 0,
       "RoleDescription": "User"
@@ -9,4 +8,4 @@
       "RoleDescription": "Admin"
     }
   ]
-}
+
