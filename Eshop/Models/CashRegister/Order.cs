@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.CashRegister
+namespace Eshop.Models.CashRegister
 {
     internal class Order
     {
@@ -14,7 +14,7 @@ namespace Eshop.CashRegister
 
         public int OrderStatus { get; set; }
 
-        public float Price { get; set; }        
+        public float Price { get; set; }
 
         public void Pay()
         {

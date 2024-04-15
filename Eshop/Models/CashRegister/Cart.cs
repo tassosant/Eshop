@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.CashRegister
+namespace Eshop.Models.CashRegister
 {
     internal class Cart
     {
         public int UserId { get; set; }
 
         public int CartId { get; set; }
-        public Dictionary<int,int> Products { get; set; } //productId,items/product
-        
+        public Dictionary<int, int> Products { get; set; } //productId,items/product
+
 
 
 

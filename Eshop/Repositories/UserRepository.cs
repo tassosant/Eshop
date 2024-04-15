@@ -1,6 +1,6 @@
-﻿using Eshop.Account;
-using Eshop.CashRegister;
+﻿using Eshop.CashRegister;
 using Eshop.MockDB;
+using Eshop.Models.Account;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,5 +58,19 @@ namespace Eshop.Repositories
             Users.Add(user);
             Parser.OverwriteUsersJSON(Users);
         }
+
+
+        public void Save(UserAbstract user)
+        {
+            if(GetUserById(user.UserId) == null)
+            {
+                UpdateUser(user);
+            }
+            else
+            {
+                AddUser(user);
+            }
+        }
+        
     }
 }

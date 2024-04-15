@@ -1,5 +1,5 @@
-﻿using Eshop.CashRegister;
-using Eshop.MockDB;
+﻿using Eshop.MockDB;
+using Eshop.Models.CashRegister;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,6 +56,19 @@ namespace Eshop.Repositories
         {
             Carts.Add(cart);
             Parser.OverwriteCartsJSON(Carts);
+        }
+
+        public void Save(Cart cart)
+        {
+            int id = cart.CartId;
+            if(GetCartById(id) != null)
+            {
+                UpdateCart(cart);
+            }
+            else
+            {
+                AddCart(cart);
+            }
         }
     }
 }

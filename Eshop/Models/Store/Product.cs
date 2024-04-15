@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.Store
+namespace Eshop.Models.Store
 {
     internal class Product
     {

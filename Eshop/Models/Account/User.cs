@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.Account
+namespace Eshop.Models.Account
 {
     internal class User : UserAbstract
     {
-        public User():base() { 
-            
+        public User() : base()
+        {
+
         }
     }
 }

@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.Account
+namespace Eshop.Models.Account
 {
     internal abstract class ProfileUserAbstract
     {
         public int ProfileId { get; set; }
         public int UserId { get; set; }
 
-        
+
 
         public void DeleteAccount()
         {
