@@ -1,4 +1,4 @@
-﻿using Eshop.Account;
+﻿using Eshop.Models.Account;
 using Eshop.MockDB;
 using Eshop.Models.Store;
 using System;

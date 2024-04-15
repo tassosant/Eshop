@@ -1,6 +1,6 @@
 ﻿using Eshop.MockDB;
 using Eshop.Models.CashRegister;
-using Eshop.Store;
+using Eshop.Models.Store;
 using System;
 using System.Collections.Generic;
 using System.Linq;

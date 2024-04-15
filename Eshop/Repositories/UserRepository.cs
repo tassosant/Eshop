@@ -1,4 +1,4 @@
-﻿using Eshop.CashRegister;
+﻿using Eshop.Models.CashRegister;
 using Eshop.MockDB;
 using Eshop.Models.Account;
 using System;
