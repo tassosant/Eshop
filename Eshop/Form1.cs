@@ -1,4 +1,5 @@
 using Eshop.MockDB;
+using Eshop.Repositories;
 
 namespace Eshop
 {
@@ -7,9 +8,9 @@ namespace Eshop
         public Form1()
         {
             InitializeComponent();
-            JSONParser parser = new JSONParser();
-            parser.ParseCartsFileToCarts();
-            parser.AddToCarts();
+            CartRepository cartRepository = new CartRepository();
+            cartRepository.GetCartById(10);
+            
             
         }
     }

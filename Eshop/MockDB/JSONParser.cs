@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System.Diagnostics;
 using Eshop.Store;
+using Eshop.Account;
 
 
 namespace Eshop.MockDB
@@ -17,14 +18,14 @@ namespace Eshop.MockDB
     {
         private string Path = @"..\..\..\MockDB";
         public List<Cart> Carts { get; set; }
+        public List<UserAbstract> Users { get; set; }
         
         public JSONParser() {
 
         }
 
         public void ParseCartsFileToCarts()
-        {
-            
+        {            
             try
             {
                 string json = File.ReadAllText(Path+"\\"+"carts.json");
@@ -43,24 +44,40 @@ namespace Eshop.MockDB
             {
                 Debug.WriteLine("An unexpected error occurred: " + ex.Message);
             }
+        }        
+
+        public void OverwriteCartsJSON(List<Cart> carts)
+        {
+            var cartsJSON = JsonSerializer.Serialize(carts);
+            File.WriteAllText(Path + "\\" + "carts.json", cartsJSON);
         }
 
-        public void AddToCarts()
+        public void ParseUsersFileToUsers()
         {
-            
-            Dictionary<int,int> products = new Dictionary<int, int>();
-            products.Add(301, 30);
+            try
+            {
+                string json = File.ReadAllText(Path + "\\" + "users.json");
+                Users = JsonSerializer.Deserialize<List<UserAbstract>>(json);
+                Debug.WriteLine("Carts parsed successfully: " + Carts.Count);
+            }
+            catch (FileNotFoundException ex)
+            {
+                Debug.WriteLine("The file was not found: " + ex.Message);
+            }
+            catch (JsonException ex)
+            {
+                Debug.WriteLine("Error parsing JSON: " + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("An unexpected error occurred: " + ex.Message);
+            }
+        }
 
-            
-
-            Cart cart = new Cart();
-            cart.CartId = 3;
-            cart.UserId = 3;
-            cart.Products = products;
-            Carts.Add(cart);
-            var cartsJSON = JsonSerializer.Serialize(Carts);
-            File.WriteAllText(Path+"\\"+"carts.json",cartsJSON);
-
+        public void OverwriteUsersJSON(List<UserAbstract> users)
+        {
+            var JSON = JsonSerializer.Serialize(users);
+            File.WriteAllText(Path + "\\" + "users.json", JSON);
         }
 
     }
