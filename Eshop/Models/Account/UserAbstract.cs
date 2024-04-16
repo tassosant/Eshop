@@ -14,15 +14,9 @@ namespace Eshop.Models.Account
         public string Username { get; set; }
         public string Password { get; set; }
 
-        public void OpenCart()
-        {
+        public string Email { get; set; }
 
-        }
-
-        public void Logout()
-        {
-
-        }
+        
 
 
 

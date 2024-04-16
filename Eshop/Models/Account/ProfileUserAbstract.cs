@@ -12,7 +12,7 @@ namespace Eshop.Models.Account
         public int UserId { get; set; }
 
 
-
+        //write the functions to service
         public void DeleteAccount()
         {
 
