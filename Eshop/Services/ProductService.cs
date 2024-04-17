@@ -32,6 +32,12 @@ namespace Eshop.Services
             return productDTOs;
         }
 
+        public void UpdateProduct(ProductDTO productDTO) { 
+            ProductMap productMap = new ProductMap();
+            Product product = productMap.MapProductDTOToProduct(productDTO);
+            ProductRepository.Save(product);
+        }
+
         
     }
 }

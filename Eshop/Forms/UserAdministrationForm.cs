@@ -40,13 +40,13 @@ namespace Eshop.Forms
             
 
         }
-        private void ParseUserDTOToRow(DataGridViewRow row, UserDTO userDTO)
-        {
-            row.Cells["UserId"].Value = userDTO.UserId;
-            row.Cells["RoleName"].Value = userDTO.RoleName;
-            row.Cells["Username"].Value = userDTO.Username;
-            row.Cells["Email"].Value = userDTO.Email;
-        }
+        //private void ParseUserDTOToRow(DataGridViewRow row, UserDTO userDTO)
+        //{
+        //    row.Cells["UserId"].Value = userDTO.UserId;
+        //    row.Cells["RoleName"].Value = userDTO.RoleName;
+        //    row.Cells["Username"].Value = userDTO.Username;
+        //    row.Cells["Email"].Value = userDTO.Email;
+        //}
 
         private void SaveButton_Click(object sender, EventArgs e)
         {

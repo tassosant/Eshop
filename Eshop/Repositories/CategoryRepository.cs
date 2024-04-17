@@ -75,5 +75,11 @@ namespace Eshop.Repositories
             }
         }
 
+        public Category GetCategoryByName(string name)
+        {
+            int index = Categories.FindIndex(category => category.CategoryName == name);
+            return Categories[index];
+        }
+
     }
 }

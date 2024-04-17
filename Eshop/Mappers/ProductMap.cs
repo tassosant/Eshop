@@ -31,7 +31,8 @@ namespace Eshop.Mappers
         {
             Product product = new Product();
             product.ProductId = productDTO.Id;
-            product.ProductName = productDTO.Name;
+            product.Name = productDTO.Name;
+            product.Image = productDTO.Image;
             product.Description = productDTO.Description;
             product.Price = productDTO.Price;
             product.Quantity = productDTO.Quantity;
@@ -44,7 +45,8 @@ namespace Eshop.Mappers
         {
             ProductDTO productDTO = new ProductDTO();
             productDTO.Id = product.ProductId;
-            productDTO.Name=product.ProductName; 
+            productDTO.Name=product.Name; 
+            productDTO.Image = product.Image;
             productDTO.Description=product.Description; 
             productDTO.Price = product.Price;
             productDTO.Quantity = product.Quantity;
@@ -58,7 +60,8 @@ namespace Eshop.Mappers
         {
             ProductDTO productDTO = new ProductDTO();
             productDTO.Id = product.ProductId;
-            productDTO.Name = product.ProductName;
+            productDTO.Name = product.Name;
+            productDTO.Image = product.Image;
             productDTO.Description = product.Description;
             productDTO.Price = product.Price;
             productDTO.Quantity = product.Quantity;            
