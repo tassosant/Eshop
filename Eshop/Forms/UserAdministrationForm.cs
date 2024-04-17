@@ -15,7 +15,7 @@ namespace Eshop.Forms
     public partial class UserAdministrationForm : Form
     {
         UserService UserService;
-        List<UserDTO> UserDTOs;
+        BindingList<UserDTO> UserDTOs;
         public UserAdministrationForm()
         {
             InitializeComponent();
@@ -26,20 +26,18 @@ namespace Eshop.Forms
         private void InitProperties()
         {
             UserService = new UserService();
-            UserDTOs = UserService.GetAllUsers();
+            List<UserDTO> UserDTOsTemp = UserService.GetAllUsers();
+            UserDTOs = new BindingList<UserDTO>(UserDTOsTemp);
         }
 
         private void FillDatagrid()
-        {
-            //foreach (UserDTO userDTO in UserDTOs)
-            //{
-            //    DataGridViewRow row = (DataGridViewRow)this.UserDataGridView.Rows[0].Clone();
-
-            //    ParseUserDTOToRow(row, userDTO);
-            //    this.UserDataGridView.Rows.Add(row);
-            //}
+        {           
             this.UserDataGridView.DataSource = UserDTOs;
             this.UserDataGridView.Columns["RoleId"].Visible = false;
+            this.UserDataGridView.AllowUserToDeleteRows = true;
+            
+            this.UserDataGridView.AllowUserToAddRows = true;
+            
 
         }
         private void ParseUserDTOToRow(DataGridViewRow row, UserDTO userDTO)
@@ -52,8 +50,24 @@ namespace Eshop.Forms
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            List<UserDTO> userDTOs = this.UserDataGridView.DataSource as List<UserDTO>;
-            this.UserService.SaveUserDTOs(userDTOs);
+            SaveUsers();
+        }
+
+        private void DeleteButton_Click(Object sender, EventArgs e)
+        {
+            List<int> indexes = new List<int>();
+            foreach (DataGridViewRow row in UserDataGridView.SelectedRows)
+            {
+                this.UserDataGridView.Rows.Remove(row);
+            };
+            SaveUsers();
+            
+        }
+
+        private void SaveUsers()
+        {
+            BindingList<UserDTO> userDTOs = this.UserDataGridView.DataSource as BindingList<UserDTO>;
+            this.UserService.SaveAllUsers(new List<UserDTO>(userDTOs));
         }
     }
 }

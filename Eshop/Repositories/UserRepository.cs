@@ -86,6 +86,12 @@ namespace Eshop.Repositories
                 AddUser(user);
             }
         }
+
+        public void SaveAll(List<UserAbstract> users)
+        {
+            Users = users;
+            Parser.OverwriteUsersJSON(users);
+        }
         
     }
 }

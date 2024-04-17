@@ -34,11 +34,13 @@
             UsernameColumn = new DataGridViewTextBoxColumn();
             EmailColumn = new DataGridViewTextBoxColumn();
             SaveButton = new Button();
+            DeleteButton = new Button();
             ((System.ComponentModel.ISupportInitialize)UserDataGridView).BeginInit();
             SuspendLayout();
             // 
             // UserDataGridView
             // 
+            UserDataGridView.AllowDrop = true;
             UserDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             UserDataGridView.Columns.AddRange(new DataGridViewColumn[] { IdColumn, RoleColumn, UsernameColumn, EmailColumn });
             UserDataGridView.Location = new Point(23, 12);
@@ -88,13 +90,24 @@
             SaveButton.TabIndex = 1;
             SaveButton.Text = "Save";
             SaveButton.UseVisualStyleBackColor = true;
-            SaveButton.Click += this.SaveButton_Click;
+            SaveButton.Click += SaveButton_Click;
+            // 
+            // DeleteButton
+            // 
+            DeleteButton.Location = new Point(316, 241);
+            DeleteButton.Name = "DeleteButton";
+            DeleteButton.Size = new Size(149, 29);
+            DeleteButton.TabIndex = 2;
+            DeleteButton.Text = "Delete Selected";
+            DeleteButton.UseVisualStyleBackColor = true;
+            DeleteButton.Click += this.DeleteButton_Click;
             // 
             // UserAdministrationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(DeleteButton);
             Controls.Add(SaveButton);
             Controls.Add(UserDataGridView);
             Name = "UserAdministrationForm";
@@ -111,5 +124,6 @@
         private DataGridViewTextBoxColumn UsernameColumn;
         private DataGridViewTextBoxColumn EmailColumn;
         private Button SaveButton;
+        private Button DeleteButton;
     }
 }
