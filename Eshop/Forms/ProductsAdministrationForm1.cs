@@ -72,6 +72,7 @@ namespace Eshop.Forms
 
             // Add the combo column to the DataGridView
             this.ProductsDataGridView.Columns.Add(comboColumn);
+            this.ProductsDataGridView.Columns["CategoryNameCombo"].Visible = false;
         }
 
         private void ProductsDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -81,19 +82,19 @@ namespace Eshop.Forms
                 // Action to take when a new role is selected
                 string selectedCategory = (string)ProductsDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
                 int productId = Int32.Parse((string)ProductsDataGridView.Rows[e.RowIndex].Cells["ProductId"].Value);
-
+                
                 MessageBox.Show("Category changed to:" + selectedCategory);
             }
         }
 
         private void EditCategoriesButton_Click(object sender, EventArgs e)
         {
-            //this.ProductsDataGridView.Columns["CategoryNameCombo"].Visible = true;
+            this.ProductsDataGridView.Columns["CategoryNameCombo"].Visible = true;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            //this.ProductsDataGridView.Columns["CategoryNameCombo"].Visible = false;
+            this.ProductsDataGridView.Columns["CategoryNameCombo"].Visible = false;
         }
     }
 }

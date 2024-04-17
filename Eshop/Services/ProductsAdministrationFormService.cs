@@ -1,4 +1,6 @@
-﻿using Eshop.Models.Store;
+﻿using Eshop.DTOs;
+using Eshop.Mappers;
+using Eshop.Models.Store;
 using Eshop.Repositories;
 using System;
 using System.Collections.Generic;
@@ -26,11 +28,29 @@ namespace Eshop.Services
             return categories;
         }
 
-        public void UpdateProductsCategory(string categoryName)
+        public void UpdateProductsCategory(ProductDTO productDTO, string categoryName)
         {
+            ProductMap productMap = new ProductMap();
+            Category category = this.CategoryRepository.GetCategoryByName(categoryName);
+            int categoryId = category.CategoryId;
+            productDTO.CategoryId = categoryId;
+            Product product = productMap.MapProductDTOToProduct(productDTO);
+            this.ProductRepository.Save(product);
 
         }
 
-        
+        public void UpdateProductsCategory(int productId, string categoryName)
+        {
+            
+            Category category = this.CategoryRepository.GetCategoryByName(categoryName);
+            int categoryId = category.CategoryId;
+            
+            Product product = this.ProductRepository.GetProductById(productId);
+            product.CategoryId = categoryId; 
+            this.ProductRepository.Save(product);
+
+        }
+
+
     }
 }
