@@ -33,6 +33,7 @@ namespace Eshop.Forms
         {
             if (ValidateUser())
             {
+                this.ErrorLoginLabel.Hide();
                 Debug.WriteLine("User found");
             }
             else
@@ -56,7 +57,8 @@ namespace Eshop.Forms
                         this.ErrorLoginLabel.Show();
                         return false;
                     }
-                }                
+                }
+                this.ErrorLoginLabel.Show();
             }
             return false;
         }

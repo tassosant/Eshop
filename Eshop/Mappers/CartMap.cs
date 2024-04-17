@@ -39,7 +39,14 @@ namespace Eshop.Mappers
             CartDTO cartDTO = new CartDTO();
             cartDTO.Cart = cart;
             cartDTO.User = user;
-            cartDTO.Products = ConvertCartProductsToCartDTOProducts(cart.Products);
+            if(cart.Products != null)
+            {
+                cartDTO.Products = ConvertCartProductsToCartDTOProducts(cart.Products);
+            }
+            else
+            {
+                cartDTO.Products = null;
+            }
             return cartDTO;
         }
 
