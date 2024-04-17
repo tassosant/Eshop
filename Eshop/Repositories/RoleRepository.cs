@@ -1,5 +1,6 @@
 ﻿using Eshop.MockDB;
 using Eshop.Models.Account;
+using Eshop.Models.CashRegister;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,7 @@ namespace Eshop.Repositories
             {
                 return Roles.First(role => role.RoleId == id);
             }
-            catch (InvalidOperationException ex)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -54,6 +55,8 @@ namespace Eshop.Repositories
 
         public void AddRole(Role role)
         {
+            List<Role> roles = GetAllRoles().OrderBy(role => role.RoleId).ToList();
+            role.RoleId = roles.Last().RoleId+1;
             Roles.Add(role);
             Parser.OverwriteRolesJSON(Roles);
         }

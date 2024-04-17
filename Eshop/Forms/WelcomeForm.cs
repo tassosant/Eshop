@@ -16,5 +16,20 @@ namespace Eshop.Forms
         {
             InitializeComponent();
         }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegisterButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GuestButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

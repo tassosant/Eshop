@@ -32,7 +32,7 @@ namespace Eshop.Repositories
             {
                 return Orders.First(order => order.OrderId == id);
             }
-            catch (InvalidOperationException ex)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -55,6 +55,8 @@ namespace Eshop.Repositories
 
         public void AddOrder(Order order)
         {
+            List<Order> orders = GetAllOrders().OrderBy(order => order.OrderId).ToList();
+            order.OrderId = orders.Last().OrderId+1;
             Orders.Add(order);
             Parser.OverwriteOrdersJSON(Orders);
         }

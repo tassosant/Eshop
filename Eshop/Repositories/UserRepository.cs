@@ -23,6 +23,7 @@ namespace Eshop.Repositories
         public List<UserAbstract> GetAllUsers()
         {
             Parser.ParseUsersFileToUsers();
+            Users = Parser.Users;
             return Parser.Users;
         }
 
@@ -32,7 +33,19 @@ namespace Eshop.Repositories
             {
                 return Users.First(user => user.UserId == id);
             }
-            catch (InvalidOperationException ex)
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public UserAbstract GetUserByUserName(string userName)
+        {
+            try
+            {
+                return Users.First(user=>user.Username == userName);
+            }
+            catch (Exception ex)
             {
                 return null;
             }
@@ -55,6 +68,8 @@ namespace Eshop.Repositories
 
         public void AddUser(UserAbstract user)
         {
+            List<UserAbstract> users = GetAllUsers().OrderBy(user => user.UserId).ToList();
+            user.UserId = users.Last().UserId+1;
             Users.Add(user);
             Parser.OverwriteUsersJSON(Users);
         }
@@ -62,7 +77,7 @@ namespace Eshop.Repositories
 
         public void Save(UserAbstract user)
         {
-            if(GetUserById(user.UserId) == null)
+            if(GetUserById(user.UserId) != null)
             {
                 UpdateUser(user);
             }
