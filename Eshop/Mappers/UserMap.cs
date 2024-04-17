@@ -35,6 +35,7 @@ namespace Eshop.Mappers
         public UserAbstract UserDTOToUser(UserDTO userDTO)
         {
             UserAbstract user = new UserAbstract();
+            user.UserId = userDTO.UserId;
             user.Username = userDTO.Username;
             user.Password = userDTO.Password;
             user.Email = userDTO.Email;

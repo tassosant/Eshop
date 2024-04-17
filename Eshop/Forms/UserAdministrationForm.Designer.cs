@@ -33,6 +33,7 @@
             RoleColumn = new DataGridViewTextBoxColumn();
             UsernameColumn = new DataGridViewTextBoxColumn();
             EmailColumn = new DataGridViewTextBoxColumn();
+            SaveButton = new Button();
             ((System.ComponentModel.ISupportInitialize)UserDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             // 
             // IdColumn
             // 
-            IdColumn.DataPropertyName = "Id";
+            IdColumn.DataPropertyName = "UserId";
             IdColumn.HeaderText = "Id";
             IdColumn.MinimumWidth = 6;
             IdColumn.Name = "IdColumn";
@@ -57,7 +58,7 @@
             // 
             // RoleColumn
             // 
-            RoleColumn.DataPropertyName = "Role";
+            RoleColumn.DataPropertyName = "RoleName";
             RoleColumn.HeaderText = "Role";
             RoleColumn.MinimumWidth = 6;
             RoleColumn.Name = "RoleColumn";
@@ -79,11 +80,22 @@
             EmailColumn.Name = "EmailColumn";
             EmailColumn.Width = 125;
             // 
+            // SaveButton
+            // 
+            SaveButton.Location = new Point(483, 241);
+            SaveButton.Name = "SaveButton";
+            SaveButton.Size = new Size(94, 29);
+            SaveButton.TabIndex = 1;
+            SaveButton.Text = "Save";
+            SaveButton.UseVisualStyleBackColor = true;
+            SaveButton.Click += this.SaveButton_Click;
+            // 
             // UserAdministrationForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(SaveButton);
             Controls.Add(UserDataGridView);
             Name = "UserAdministrationForm";
             Text = "UserAdministrationForm1";
@@ -98,5 +110,6 @@
         private DataGridViewTextBoxColumn RoleColumn;
         private DataGridViewTextBoxColumn UsernameColumn;
         private DataGridViewTextBoxColumn EmailColumn;
+        private Button SaveButton;
     }
 }

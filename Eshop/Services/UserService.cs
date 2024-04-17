@@ -35,5 +35,15 @@ namespace Eshop.Services
         {
             return UserRepository.GetUserById(id);
         }
+
+        public void SaveUserDTOs(List<UserDTO> usersDTO)
+        {
+            UserMap userMap = new UserMap();
+            foreach (UserDTO userDTO in usersDTO)
+            {
+                UserAbstract user = userMap.UserDTOToUser(userDTO);
+                UserRepository.Save(user);
+            }
+        }
     }
 }

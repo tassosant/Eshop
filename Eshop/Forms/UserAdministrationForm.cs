@@ -31,19 +31,29 @@ namespace Eshop.Forms
 
         private void FillDatagrid()
         {
-            foreach(UserDTO userDTO in UserDTOs)
-            {
-                DataGridViewRow row = (DataGridViewRow)this.UserDataGridView.Rows[0].Clone();
-                ParseUserDTOToRow(row, userDTO);
-                this.UserDataGridView.Rows.Add(row);
-            }
+            //foreach (UserDTO userDTO in UserDTOs)
+            //{
+            //    DataGridViewRow row = (DataGridViewRow)this.UserDataGridView.Rows[0].Clone();
+
+            //    ParseUserDTOToRow(row, userDTO);
+            //    this.UserDataGridView.Rows.Add(row);
+            //}
+            this.UserDataGridView.DataSource = UserDTOs;
+            this.UserDataGridView.Columns["RoleId"].Visible = false;
+
         }
         private void ParseUserDTOToRow(DataGridViewRow row, UserDTO userDTO)
         {
-            row.Cells["Id"].Value = userDTO.UserId;
-            row.Cells["Role"].Value = userDTO.RoleName;
+            row.Cells["UserId"].Value = userDTO.UserId;
+            row.Cells["RoleName"].Value = userDTO.RoleName;
             row.Cells["Username"].Value = userDTO.Username;
             row.Cells["Email"].Value = userDTO.Email;
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            List<UserDTO> userDTOs = this.UserDataGridView.DataSource as List<UserDTO>;
+            this.UserService.SaveUserDTOs(userDTOs);
         }
     }
 }
