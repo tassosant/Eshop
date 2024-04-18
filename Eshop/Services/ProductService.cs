@@ -4,6 +4,7 @@ using Eshop.Models.Store;
 using Eshop.Repositories;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,6 +37,16 @@ namespace Eshop.Services
             ProductMap productMap = new ProductMap();
             Product product = productMap.MapProductDTOToProduct(productDTO);
             ProductRepository.Save(product);
+        }
+
+        public void SaveAllProducts(BindingList<ProductDTO> productsDTOs)
+        {
+            ProductMap productMap = new ProductMap();
+            List<Product> products = new List<Product>();
+            foreach(ProductDTO productDTO in productsDTOs)
+            {
+                products.Add(productMap.MapProductDTOToProduct(productDTO));
+            }
         }
 
         

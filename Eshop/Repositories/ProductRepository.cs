@@ -74,6 +74,12 @@ namespace Eshop.Repositories
             }
         }
 
+        public void SaveAll(List<Product> products)
+        {
+            Products = products;
+            Parser.OverwriteProductsJSON(Products);
+        }
+
         
     }
 }

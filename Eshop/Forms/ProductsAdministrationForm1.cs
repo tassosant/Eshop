@@ -39,9 +39,7 @@ namespace Eshop.Forms
 
         private void InitDataGrid()
         {
-            List<ProductDTO> productDTOsTemp = productService.GetAllProducts();
-            ProductDTOs = new BindingList<ProductDTO>(productDTOsTemp);
-            this.ProductsDataGridView.DataSource = ProductDTOs;
+            BindDatasourceToProducts();
             this.ProductsDataGridView.Columns["CategoryId"].Visible = false;
             this.ProductsDataGridView.Columns["Image"].Visible = false;
             //this.ProductsDataGridView.Columns["CategoryNameCombo"].Visible = false;
@@ -77,13 +75,14 @@ namespace Eshop.Forms
 
         private void ProductsDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == ProductsDataGridView.Columns["CategoryName"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == ProductsDataGridView.Columns["CategoryNameCombo"].Index && e.RowIndex >= 0)
             {
                 // Action to take when a new role is selected
                 string selectedCategory = (string)ProductsDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
-                int productId = Int32.Parse((string)ProductsDataGridView.Rows[e.RowIndex].Cells["ProductId"].Value);
-                
+                int productId = Int32.Parse(ProductsDataGridView.Rows[e.RowIndex].Cells["Id"].Value.ToString());
+                productsAdministrationFormService.UpdateProductsCategory(productId, selectedCategory);
                 MessageBox.Show("Category changed to:" + selectedCategory);
+                RefreshDataGrid();
             }
         }
 
@@ -94,7 +93,20 @@ namespace Eshop.Forms
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
+
             this.ProductsDataGridView.Columns["CategoryNameCombo"].Visible = false;
+        }
+
+        private void RefreshDataGrid()
+        {
+            BindDatasourceToProducts();
+        }
+
+        private void BindDatasourceToProducts()
+        {
+            List<ProductDTO> productDTOsTemp = productService.GetAllProducts();
+            ProductDTOs = new BindingList<ProductDTO>(productDTOsTemp);
+            this.ProductsDataGridView.DataSource = ProductDTOs;
         }
     }
 }
