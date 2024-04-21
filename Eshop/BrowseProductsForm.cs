@@ -62,8 +62,14 @@ namespace Eshop
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             // view teapot
-           ProductForm productForm = new ProductForm(userID, cart);
-           productForm.ShowDialog();
+            ProductForm productForm = new ProductForm(userID, cart);
+            productForm.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CartForm cartform = new CartForm(cart);
+            cartform.ShowDialog();
         }
     }
 }

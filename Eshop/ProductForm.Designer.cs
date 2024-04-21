@@ -34,6 +34,7 @@
             richTextBox1 = new RichTextBox();
             label2 = new Label();
             button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -84,11 +85,22 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // button2
+            // 
+            button2.Location = new Point(630, 367);
+            button2.Name = "button2";
+            button2.Size = new Size(147, 44);
+            button2.TabIndex = 5;
+            button2.Text = "go to cart";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // ProductForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(richTextBox1);
@@ -108,5 +120,6 @@
         private RichTextBox richTextBox1;
         private Label label2;
         private Button button1;
+        private Button button2;
     }
 }
