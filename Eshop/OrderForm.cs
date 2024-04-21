@@ -9,32 +9,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Eshop
 {
-    public partial class CartForm : Form
-    {
-        public CartForm(ArrayList cart)
+    public partial class OrderForm : Form
+    { 
+        float total;
+        public OrderForm()
         {
-            string text = "";
             InitializeComponent();
-            foreach (var item in cart)
-            {
-                text += item.ToString();
-            }
-
-            richTextBox1.Text = text;
-            calculateTotal(cart);
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            // confirm order
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // continue to payment total amount
+            PaypallGateForm payment = new PaypallGateForm(total);
+            payment.ShowDialog();
         }
 
         private void calculateTotal(ArrayList cart)
         {
-            float total = 0;
+            //float total = 0;
             foreach (var item in cart)
             {
                 total += 1;
@@ -47,11 +47,6 @@ namespace Eshop
         private void label2_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // create order
         }
     }
 }

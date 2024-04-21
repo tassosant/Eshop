@@ -31,6 +31,7 @@
             richTextBox1 = new RichTextBox();
             label1 = new Label();
             label2 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // richTextBox1
@@ -61,11 +62,22 @@
             label2.Text = "label2";
             label2.Click += label2_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(567, 137);
+            button1.Name = "button1";
+            button1.Size = new Size(143, 62);
+            button1.TabIndex = 3;
+            button1.Text = "checkout";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // CartForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(richTextBox1);
@@ -80,5 +92,6 @@
         private RichTextBox richTextBox1;
         private Label label1;
         private Label label2;
+        private Button button1;
     }
 }
