@@ -1,0 +1,11 @@
+﻿ [
+    {
+      "RoleId": 1,
+      "RoleDescription": "User"
+    },
+    {
+      "RoleId": 2,
+      "RoleDescription": "Admin"
+    }
+  ]
+

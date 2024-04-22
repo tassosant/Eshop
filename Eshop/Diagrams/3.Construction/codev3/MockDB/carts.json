@@ -1,0 +1,26 @@
+[
+  {
+    "UserId": 1,
+    "CartId": 1,
+    "Products": {
+      "1": 10,
+      "101": 100
+    }
+  },
+  {
+    "UserId": 2,
+    "CartId": 2,
+    "Products": {
+      "2": 20,
+      "201": 200
+    }
+  },
+  {
+    "UserId": 3,
+    "CartId": 3,
+    "Products": {
+      "301": 30
+    }
+  }
+  
+]

@@ -1,0 +1,16 @@
+﻿[
+  {
+    "UserId": 1,
+    "RoleId": 1,
+    "Username": "a4",
+    "Password": "2",
+    "Email": "t1"
+  },
+  {
+    "UserId": 2,
+    "RoleId": 1,
+    "Username": "a3",
+    "Password": "1",
+    "Email": "t"
+  }
+]
