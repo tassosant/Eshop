@@ -15,6 +15,7 @@ namespace Eshop.Models.CashRegister
         public int OrderStatus { get; set; }
 
         public float Price { get; set; }
+        
 
         public void Pay()
         {

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Eshop.Models.CashRegister;
 
 namespace Eshop.Repositories
 {
@@ -32,7 +33,7 @@ namespace Eshop.Repositories
             {
                 return Categories.First(category => category.CategoryId == id);
             }
-            catch (InvalidOperationException ex)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -55,6 +56,8 @@ namespace Eshop.Repositories
 
         public void AddCategory(Category category)
         {
+            List<Category> categories = GetAllCategories().OrderBy(category => category.CategoryId).ToList();
+            category.CategoryId = categories.Last().CategoryId + 1;
             Categories.Add(category);
             Parser.OverwriteCategoriesJSON(Categories);
         }
@@ -70,6 +73,12 @@ namespace Eshop.Repositories
             {
                 AddCategory(category);
             }
+        }
+
+        public Category GetCategoryByName(string name)
+        {
+            int index = Categories.FindIndex(category => category.CategoryName == name);
+            return Categories[index];
         }
 
     }

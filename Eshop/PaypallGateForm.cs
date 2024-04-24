@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Eshop.Models.CashRegister;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,6 +63,17 @@ namespace Eshop
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // submit payment 
+            MessageBox.Show("successful transaction");
+            // inform shipping gate
+            // inform user history ?? 
+            // return to home page - now the cart is empty
+            Form1 f = new Form1();
+            f.ShowDialog();
         }
     }
 }

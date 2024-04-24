@@ -1,4 +1,5 @@
 ﻿using Eshop.MockDB;
+using Eshop.Models.Account;
 using Eshop.Models.CashRegister;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace Eshop.Repositories
             {
                 return Carts.First(cart => cart.CartId == id);
             }
-            catch (InvalidOperationException ex)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -54,6 +55,8 @@ namespace Eshop.Repositories
 
         public void AddCart(Cart cart)
         {
+            List<Cart> carts = GetAllCarts().OrderBy(cart => cart.CartId).ToList();
+            cart.CartId = carts.Last().CartId + 1;
             Carts.Add(cart);
             Parser.OverwriteCartsJSON(Carts);
         }

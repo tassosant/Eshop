@@ -10,13 +10,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Eshop
 {
     public partial class CartForm : Form
     {
-        public CartForm(ArrayList cart)
+        ArrayList cart;
+        int userID;
+        float total = 0;
+        public CartForm(ArrayList cart, int userID)
         {
+            this.cart = cart;
+            this.userID = userID;
             string text = "";
             InitializeComponent();
             foreach (var item in cart)
@@ -34,7 +40,7 @@ namespace Eshop
 
         private void calculateTotal(ArrayList cart)
         {
-            float total = 0;
+            
             foreach (var item in cart)
             {
                 total += 1;
@@ -52,6 +58,8 @@ namespace Eshop
         private void button1_Click(object sender, EventArgs e)
         {
             // create order
+            OrderForm b = new OrderForm(userID, cart, total);
+            b.ShowDialog();
         }
     }
 }

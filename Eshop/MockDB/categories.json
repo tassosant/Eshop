@@ -1,8 +1,12 @@
 ﻿
   [
     {
-      "CategoryId": 0,
-      "CategoryName": ""
+      "CategoryId": 1,
+      "CategoryName": "Clothes"
+    },
+    {
+      "CategoryId": 2,
+      "CategoryName": "Shoes"
     }
   ]
 

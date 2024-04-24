@@ -31,7 +31,7 @@ namespace Eshop.MockDB
         
         
         public JSONParser() {
-
+            
         }
         //Carts
         public void ParseCartsFileToCarts()

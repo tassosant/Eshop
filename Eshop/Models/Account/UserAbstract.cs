@@ -6,23 +6,16 @@ using System.Threading.Tasks;
 
 namespace Eshop.Models.Account
 {
-    internal abstract class UserAbstract
+    internal class UserAbstract
     {
-        public int UserId { get; set; }
-        public int ProfileId { get; set; }
+        public int UserId { get; set; }        
         public int RoleId { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
 
-        public void OpenCart()
-        {
+        public string Email { get; set; }
 
-        }
-
-        public void Logout()
-        {
-
-        }
+        
 
 
 

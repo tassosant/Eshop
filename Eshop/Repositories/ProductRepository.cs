@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Eshop.Models.CashRegister;
 
 namespace Eshop.Repositories
 {
@@ -32,7 +33,7 @@ namespace Eshop.Repositories
             {
                 return Products.First(product => product.ProductId == id);
             }
-            catch (InvalidOperationException ex)
+            catch (Exception ex)
             {
                 return null;
             }
@@ -55,6 +56,8 @@ namespace Eshop.Repositories
 
         public void AddProduct(Product product)
         {
+            List<Product> products = GetAllProducts().OrderBy(product => product.ProductId).ToList();
+            product.ProductId = products.Last().ProductId+1;
             Products.Add(product);
             Parser.OverwriteProductsJSON(Products);
         }
@@ -70,5 +73,13 @@ namespace Eshop.Repositories
                 AddProduct(product);
             }
         }
+
+        public void SaveAll(List<Product> products)
+        {
+            Products = products;
+            Parser.OverwriteProductsJSON(Products);
+        }
+
+        
     }
 }
