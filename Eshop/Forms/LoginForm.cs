@@ -15,7 +15,7 @@ namespace Eshop.Forms
 {
     public partial class LoginForm : Form
     {
-        LoginFormService service;
+        LoginFormService loginFormService;
         public LoginForm()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace Eshop.Forms
         private void InitProperties()
         {
             this.ErrorLoginLabel.Hide();
-            this.service = new LoginFormService();
+            this.loginFormService = new LoginFormService();
         }
 
         private void SignInButton_Click(object sender, EventArgs e)
@@ -44,9 +44,9 @@ namespace Eshop.Forms
 
         private Boolean ValidateUser()
         {
-            if (this.service != null)
+            if (this.loginFormService != null)
             {
-                UserAbstract user = this.service.GetUser(this.UserNameTextBox.Text);
+                UserAbstract user = this.loginFormService.GetUser(this.UserNameTextBox.Text);
                 if (user != null )
                 {
                     if(user.Password == this.PasswordTextBox.Text) {
