@@ -92,6 +92,7 @@
             pictureBoxProduct2.Margin = new Padding(2);
             pictureBoxProduct2.Name = "pictureBoxProduct2";
             pictureBoxProduct2.Size = new Size(120, 125);
+            pictureBoxProduct2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxProduct2.TabIndex = 5;
             pictureBoxProduct2.TabStop = false;
             // 
@@ -121,6 +122,7 @@
             pictureBoxProduct3.Margin = new Padding(2);
             pictureBoxProduct3.Name = "pictureBoxProduct3";
             pictureBoxProduct3.Size = new Size(120, 125);
+            pictureBoxProduct3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxProduct3.TabIndex = 8;
             pictureBoxProduct3.TabStop = false;
             // 
@@ -150,6 +152,7 @@
             pictureBoxProduct4.Margin = new Padding(2);
             pictureBoxProduct4.Name = "pictureBoxProduct4";
             pictureBoxProduct4.Size = new Size(120, 125);
+            pictureBoxProduct4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxProduct4.TabIndex = 11;
             pictureBoxProduct4.TabStop = false;
             // 
