@@ -86,7 +86,11 @@ namespace Eshop
             this.lastPageProducts = this.productDTOs.Count%this.productsPerPage;
             this.selectedPage = 1;
         }
-       
+
+        private void ButtonAddProduct_Click(object sender, EventArgs e, int id)
+        {
+             MessageBox.Show("id:"+id+" added to cart");
+        }
 
         private void ButtonAddProduct1_Click(object sender, EventArgs e)
         { // add teapot to cart
@@ -138,11 +142,7 @@ namespace Eshop
 
         }
 
-        private void InitViews()
-        {
-            
-
-        }
+      
 
         private void MapProductDTOToView(Object productDTO2, Object productView2)
         {
@@ -176,6 +176,7 @@ namespace Eshop
             productView.productPriceLabel = this.labelProduct1Price;
             productView.addProductToCart = this.buttonAddProduct1;
             productView.productPictureBox = this.pictureBoxProduct1;
+            productView.addProductToCart.Click += (sender, EventArgs) => { ButtonAddProduct_Click(sender, EventArgs, productView.productId); };
             return productView;
         }
         private ProductView MapProductView2()
@@ -185,6 +186,7 @@ namespace Eshop
             productView.productPriceLabel = this.labelProduct2Price;
             productView.addProductToCart = this.buttonAddProduct2;
             productView.productPictureBox = this.pictureBoxProduct2;
+            productView.addProductToCart.Click += (sender, EventArgs) =>{ButtonAddProduct_Click(sender,EventArgs, productView.productId);};
             return productView;
         }
         private ProductView MapProductView3()
@@ -194,6 +196,7 @@ namespace Eshop
             productView.productPriceLabel = this.labelProduct3Price;
             productView.addProductToCart = this.buttonAddProduct3;
             productView.productPictureBox = this.pictureBoxProduct3;
+            productView.addProductToCart.Click += (sender, EventArgs) =>{ButtonAddProduct_Click(sender,EventArgs, productView.productId);};
             return productView;
         }
         private ProductView MapProductView4()
@@ -203,6 +206,7 @@ namespace Eshop
             productView.productPriceLabel = this.labelProduct4Price;
             productView.addProductToCart = this.buttonAddProduct4;
             productView.productPictureBox = this.pictureBoxProduct4;
+            productView.addProductToCart.Click += (sender, EventArgs) =>{ButtonAddProduct_Click(sender,EventArgs, productView.productId);};
             return productView;
         }
     }

@@ -109,7 +109,7 @@
             // labelProduct2Name
             // 
             labelProduct2Name.AutoSize = true;
-            labelProduct2Name.Location = new Point(218, 180);
+            labelProduct2Name.Location = new Point(218, 190);
             labelProduct2Name.Margin = new Padding(2, 0, 2, 0);
             labelProduct2Name.Name = "labelProduct2Name";
             labelProduct2Name.Size = new Size(50, 20);
@@ -139,7 +139,7 @@
             // labelProduct3Name
             // 
             labelProduct3Name.AutoSize = true;
-            labelProduct3Name.Location = new Point(372, 180);
+            labelProduct3Name.Location = new Point(372, 190);
             labelProduct3Name.Margin = new Padding(2, 0, 2, 0);
             labelProduct3Name.Name = "labelProduct3Name";
             labelProduct3Name.Size = new Size(50, 20);
@@ -169,7 +169,7 @@
             // labelProduct4Name
             // 
             labelProduct4Name.AutoSize = true;
-            labelProduct4Name.Location = new Point(515, 180);
+            labelProduct4Name.Location = new Point(515, 190);
             labelProduct4Name.Margin = new Padding(2, 0, 2, 0);
             labelProduct4Name.Name = "labelProduct4Name";
             labelProduct4Name.Size = new Size(50, 20);
@@ -185,7 +185,7 @@
             buttonAddProduct1.TabIndex = 12;
             buttonAddProduct1.Text = "add";
             buttonAddProduct1.UseVisualStyleBackColor = true;
-            buttonAddProduct1.Click += ButtonAddProduct1_Click;
+            
             // 
             // buttonAddProduct2
             // 
@@ -196,7 +196,7 @@
             buttonAddProduct2.TabIndex = 13;
             buttonAddProduct2.Text = "add";
             buttonAddProduct2.UseVisualStyleBackColor = true;
-            buttonAddProduct2.Click += ButtonAddProduct2_Click;
+            
             // 
             // buttonAddProduct3
             // 
@@ -207,7 +207,7 @@
             buttonAddProduct3.TabIndex = 14;
             buttonAddProduct3.Text = "add";
             buttonAddProduct3.UseVisualStyleBackColor = true;
-            buttonAddProduct3.Click += ButtonAddProduct3_Click;
+            
             // 
             // buttonAddProduct4
             // 
@@ -218,7 +218,7 @@
             buttonAddProduct4.TabIndex = 15;
             buttonAddProduct4.Text = "add";
             buttonAddProduct4.UseVisualStyleBackColor = true;
-            buttonAddProduct4.Click += ButtonAddProduct4_Click;
+            
             // 
             // button5
             // 
