@@ -58,6 +58,11 @@ namespace Eshop
                     
                     viewIndex++;                        
                 }
+                for (int hideIndex = viewIndex; hideIndex < this.productsPerPage;hideIndex++)
+                {
+                    ProductView productView = (ProductView) this.productPageViews[hideIndex];
+                    productView.HideProduct();
+                }
                 return;
             }
             //this.SuspendLayout();
@@ -209,5 +214,7 @@ namespace Eshop
             productView.addProductToCart.Click += (sender, EventArgs) =>{ButtonAddProduct_Click(sender,EventArgs, productView.productId);};
             return productView;
         }
+
+        
     }
 }

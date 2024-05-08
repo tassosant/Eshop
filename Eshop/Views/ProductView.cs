@@ -23,7 +23,9 @@ namespace Eshop.Views
             this.HideProduct();
         }
 
-        public ProductView() { }
+        public ProductView() { 
+            
+        }
 
         public void HideProduct()
         {
