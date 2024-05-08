@@ -16,6 +16,7 @@ namespace Eshop
         ArrayList cart = new ArrayList();
         int userID;
         ArrayList products = new ArrayList();
+        ArrayList productPageViews = new ArrayList();
 
         public BrowseProductsForm(int userID, ArrayList cart)
         {
@@ -68,8 +69,23 @@ namespace Eshop
 
         private void button5_Click(object sender, EventArgs e)
         {
-            CartForm cartform = new CartForm(cart,  userID);
+            CartForm cartform = new CartForm(cart, userID);
             cartform.ShowDialog();
+        }
+
+        private void ButtonPreviousPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonNextPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void InitViews()
+        {
+            this.productPageViews.Clear();
         }
     }
 }

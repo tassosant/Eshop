@@ -29,235 +29,287 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowseProductsForm));
-            label1 = new Label();
-            label2 = new Label();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            label3 = new Label();
-            label4 = new Label();
-            pictureBox3 = new PictureBox();
-            label5 = new Label();
-            label6 = new Label();
-            pictureBox4 = new PictureBox();
-            label7 = new Label();
-            label8 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            labelProduct1Name = new Label();
+            labelProduct1Price = new Label();
+            pictureBoxProduct1 = new PictureBox();
+            pictureBoxProduct2 = new PictureBox();
+            labelProduct2Price = new Label();
+            labelProduct2Name = new Label();
+            pictureBoxProduct3 = new PictureBox();
+            labelProduct3Price = new Label();
+            labelProduct3Name = new Label();
+            pictureBoxProduct4 = new PictureBox();
+            labelProduct4Price = new Label();
+            labelProduct4Name = new Label();
+            buttonAddProduct1 = new Button();
+            buttonAddProduct2 = new Button();
+            buttonAddProduct3 = new Button();
+            buttonAddProduct4 = new Button();
             button5 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            buttonPreviousPage = new Button();
+            buttonNextPage = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProduct1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProduct2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProduct3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProduct4).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // labelProduct1Name
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(38, 250);
-            label1.Name = "label1";
-            label1.Size = new Size(64, 25);
-            label1.TabIndex = 0;
-            label1.Text = "teapot";
-            label1.Click += label1_Click;
+            labelProduct1Name.AutoSize = true;
+            labelProduct1Name.Location = new Point(30, 200);
+            labelProduct1Name.Margin = new Padding(2, 0, 2, 0);
+            labelProduct1Name.Name = "labelProduct1Name";
+            labelProduct1Name.Size = new Size(53, 20);
+            labelProduct1Name.TabIndex = 0;
+            labelProduct1Name.Text = "teapot";
+            labelProduct1Name.Click += label1_Click;
             // 
-            // label2
+            // labelProduct1Price
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(117, 250);
-            label2.Name = "label2";
-            label2.Size = new Size(56, 25);
-            label2.TabIndex = 1;
-            label2.Text = "12,00";
+            labelProduct1Price.AutoSize = true;
+            labelProduct1Price.Location = new Point(94, 200);
+            labelProduct1Price.Margin = new Padding(2, 0, 2, 0);
+            labelProduct1Price.Name = "labelProduct1Price";
+            labelProduct1Price.Size = new Size(44, 20);
+            labelProduct1Price.TabIndex = 1;
+            labelProduct1Price.Text = "12,00";
             // 
-            // pictureBox1
+            // pictureBoxProduct1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(38, 66);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 156);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            pictureBoxProduct1.Image = (Image)resources.GetObject("pictureBoxProduct1.Image");
+            pictureBoxProduct1.Location = new Point(30, 53);
+            pictureBoxProduct1.Margin = new Padding(2, 2, 2, 2);
+            pictureBoxProduct1.Name = "pictureBoxProduct1";
+            pictureBoxProduct1.Size = new Size(120, 125);
+            pictureBoxProduct1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxProduct1.TabIndex = 2;
+            pictureBoxProduct1.TabStop = false;
+            pictureBoxProduct1.Click += pictureBox1_Click;
             // 
-            // pictureBox2
+            // pictureBoxProduct2
             // 
-            pictureBox2.Location = new Point(231, 66);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(150, 156);
-            pictureBox2.TabIndex = 5;
-            pictureBox2.TabStop = false;
+            pictureBoxProduct2.Location = new Point(185, 53);
+            pictureBoxProduct2.Margin = new Padding(2, 2, 2, 2);
+            pictureBoxProduct2.Name = "pictureBoxProduct2";
+            pictureBoxProduct2.Size = new Size(120, 125);
+            pictureBoxProduct2.TabIndex = 5;
+            pictureBoxProduct2.TabStop = false;
             // 
-            // label3
+            // labelProduct2Price
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(310, 250);
-            label3.Name = "label3";
-            label3.Size = new Size(59, 25);
-            label3.TabIndex = 4;
-            label3.Text = "label3";
+            labelProduct2Price.AutoSize = true;
+            labelProduct2Price.Location = new Point(248, 200);
+            labelProduct2Price.Margin = new Padding(2, 0, 2, 0);
+            labelProduct2Price.Name = "labelProduct2Price";
+            labelProduct2Price.Size = new Size(50, 20);
+            labelProduct2Price.TabIndex = 4;
+            labelProduct2Price.Text = "label3";
             // 
-            // label4
+            // labelProduct2Name
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(231, 250);
-            label4.Name = "label4";
-            label4.Size = new Size(59, 25);
-            label4.TabIndex = 3;
-            label4.Text = "label4";
+            labelProduct2Name.AutoSize = true;
+            labelProduct2Name.Location = new Point(185, 200);
+            labelProduct2Name.Margin = new Padding(2, 0, 2, 0);
+            labelProduct2Name.Name = "labelProduct2Name";
+            labelProduct2Name.Size = new Size(50, 20);
+            labelProduct2Name.TabIndex = 3;
+            labelProduct2Name.Text = "label4";
             // 
-            // pictureBox3
+            // pictureBoxProduct3
             // 
-            pictureBox3.Location = new Point(420, 66);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(150, 156);
-            pictureBox3.TabIndex = 8;
-            pictureBox3.TabStop = false;
+            pictureBoxProduct3.Location = new Point(336, 53);
+            pictureBoxProduct3.Margin = new Padding(2, 2, 2, 2);
+            pictureBoxProduct3.Name = "pictureBoxProduct3";
+            pictureBoxProduct3.Size = new Size(120, 125);
+            pictureBoxProduct3.TabIndex = 8;
+            pictureBoxProduct3.TabStop = false;
             // 
-            // label5
+            // labelProduct3Price
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(499, 250);
-            label5.Name = "label5";
-            label5.Size = new Size(59, 25);
-            label5.TabIndex = 7;
-            label5.Text = "label5";
+            labelProduct3Price.AutoSize = true;
+            labelProduct3Price.Location = new Point(399, 200);
+            labelProduct3Price.Margin = new Padding(2, 0, 2, 0);
+            labelProduct3Price.Name = "labelProduct3Price";
+            labelProduct3Price.Size = new Size(50, 20);
+            labelProduct3Price.TabIndex = 7;
+            labelProduct3Price.Text = "label5";
             // 
-            // label6
+            // labelProduct3Name
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(420, 250);
-            label6.Name = "label6";
-            label6.Size = new Size(59, 25);
-            label6.TabIndex = 6;
-            label6.Text = "label6";
+            labelProduct3Name.AutoSize = true;
+            labelProduct3Name.Location = new Point(336, 200);
+            labelProduct3Name.Margin = new Padding(2, 0, 2, 0);
+            labelProduct3Name.Name = "labelProduct3Name";
+            labelProduct3Name.Size = new Size(50, 20);
+            labelProduct3Name.TabIndex = 6;
+            labelProduct3Name.Text = "label6";
             // 
-            // pictureBox4
+            // pictureBoxProduct4
             // 
-            pictureBox4.Location = new Point(605, 66);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(150, 156);
-            pictureBox4.TabIndex = 11;
-            pictureBox4.TabStop = false;
+            pictureBoxProduct4.Location = new Point(484, 53);
+            pictureBoxProduct4.Margin = new Padding(2, 2, 2, 2);
+            pictureBoxProduct4.Name = "pictureBoxProduct4";
+            pictureBoxProduct4.Size = new Size(120, 125);
+            pictureBoxProduct4.TabIndex = 11;
+            pictureBoxProduct4.TabStop = false;
             // 
-            // label7
+            // labelProduct4Price
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(684, 250);
-            label7.Name = "label7";
-            label7.Size = new Size(59, 25);
-            label7.TabIndex = 10;
-            label7.Text = "label7";
+            labelProduct4Price.AutoSize = true;
+            labelProduct4Price.Location = new Point(547, 200);
+            labelProduct4Price.Margin = new Padding(2, 0, 2, 0);
+            labelProduct4Price.Name = "labelProduct4Price";
+            labelProduct4Price.Size = new Size(50, 20);
+            labelProduct4Price.TabIndex = 10;
+            labelProduct4Price.Text = "label7";
             // 
-            // label8
+            // labelProduct4Name
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(605, 250);
-            label8.Name = "label8";
-            label8.Size = new Size(59, 25);
-            label8.TabIndex = 9;
-            label8.Text = "label8";
+            labelProduct4Name.AutoSize = true;
+            labelProduct4Name.Location = new Point(484, 200);
+            labelProduct4Name.Margin = new Padding(2, 0, 2, 0);
+            labelProduct4Name.Name = "labelProduct4Name";
+            labelProduct4Name.Size = new Size(50, 20);
+            labelProduct4Name.TabIndex = 9;
+            labelProduct4Name.Text = "label8";
             // 
-            // button1
+            // buttonAddProduct1
             // 
-            button1.Location = new Point(64, 295);
-            button1.Name = "button1";
-            button1.Size = new Size(89, 32);
-            button1.TabIndex = 12;
-            button1.Text = "add";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            buttonAddProduct1.Location = new Point(51, 236);
+            buttonAddProduct1.Margin = new Padding(2, 2, 2, 2);
+            buttonAddProduct1.Name = "buttonAddProduct1";
+            buttonAddProduct1.Size = new Size(71, 26);
+            buttonAddProduct1.TabIndex = 12;
+            buttonAddProduct1.Text = "add";
+            buttonAddProduct1.UseVisualStyleBackColor = true;
+            buttonAddProduct1.Click += button1_Click;
             // 
-            // button2
+            // buttonAddProduct2
             // 
-            button2.Location = new Point(261, 295);
-            button2.Name = "button2";
-            button2.Size = new Size(89, 32);
-            button2.TabIndex = 13;
-            button2.Text = "add";
-            button2.UseVisualStyleBackColor = true;
+            buttonAddProduct2.Location = new Point(209, 236);
+            buttonAddProduct2.Margin = new Padding(2, 2, 2, 2);
+            buttonAddProduct2.Name = "buttonAddProduct2";
+            buttonAddProduct2.Size = new Size(71, 26);
+            buttonAddProduct2.TabIndex = 13;
+            buttonAddProduct2.Text = "add";
+            buttonAddProduct2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonAddProduct3
             // 
-            button3.Location = new Point(450, 295);
-            button3.Name = "button3";
-            button3.Size = new Size(89, 32);
-            button3.TabIndex = 14;
-            button3.Text = "add";
-            button3.UseVisualStyleBackColor = true;
+            buttonAddProduct3.Location = new Point(360, 236);
+            buttonAddProduct3.Margin = new Padding(2, 2, 2, 2);
+            buttonAddProduct3.Name = "buttonAddProduct3";
+            buttonAddProduct3.Size = new Size(71, 26);
+            buttonAddProduct3.TabIndex = 14;
+            buttonAddProduct3.Text = "add";
+            buttonAddProduct3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonAddProduct4
             // 
-            button4.Location = new Point(631, 295);
-            button4.Name = "button4";
-            button4.Size = new Size(89, 32);
-            button4.TabIndex = 15;
-            button4.Text = "add";
-            button4.UseVisualStyleBackColor = true;
+            buttonAddProduct4.Location = new Point(505, 236);
+            buttonAddProduct4.Margin = new Padding(2, 2, 2, 2);
+            buttonAddProduct4.Name = "buttonAddProduct4";
+            buttonAddProduct4.Size = new Size(71, 26);
+            buttonAddProduct4.TabIndex = 15;
+            buttonAddProduct4.Text = "add";
+            buttonAddProduct4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            button5.Location = new Point(591, 378);
+            button5.Location = new Point(473, 302);
+            button5.Margin = new Padding(2, 2, 2, 2);
             button5.Name = "button5";
-            button5.Size = new Size(129, 38);
+            button5.Size = new Size(103, 30);
             button5.TabIndex = 16;
             button5.Text = "go to cart";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
+            // buttonPreviousPage
+            // 
+            buttonPreviousPage.BackColor = SystemColors.Control;
+            buttonPreviousPage.BackgroundImage = Properties.Resources.Arrow_Left;
+            buttonPreviousPage.BackgroundImageLayout = ImageLayout.Stretch;
+            buttonPreviousPage.FlatAppearance.BorderSize = 0;
+            buttonPreviousPage.FlatStyle = FlatStyle.Flat;
+            buttonPreviousPage.Location = new Point(30, 283);
+            buttonPreviousPage.Name = "buttonPreviousPage";
+            buttonPreviousPage.Size = new Size(92, 65);
+            buttonPreviousPage.TabIndex = 17;
+            buttonPreviousPage.UseVisualStyleBackColor = false;
+            buttonPreviousPage.Click += ButtonPreviousPage_Click;
+            // 
+            // buttonNextPage
+            // 
+            buttonNextPage.BackColor = SystemColors.Control;
+            buttonNextPage.BackgroundImage = (Image)resources.GetObject("buttonNextPage.BackgroundImage");
+            buttonNextPage.BackgroundImageLayout = ImageLayout.Stretch;
+            buttonNextPage.FlatAppearance.BorderSize = 0;
+            buttonNextPage.FlatStyle = FlatStyle.Flat;
+            buttonNextPage.Location = new Point(162, 283);
+            buttonNextPage.Name = "buttonNextPage";
+            buttonNextPage.Size = new Size(92, 65);
+            buttonNextPage.TabIndex = 19;
+            buttonNextPage.UseVisualStyleBackColor = false;
+            buttonNextPage.Click += ButtonNextPage_Click;
+            // 
             // BrowseProductsForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(640, 360);
+            Controls.Add(buttonNextPage);
+            Controls.Add(buttonPreviousPage);
             Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(pictureBox4);
-            Controls.Add(label7);
-            Controls.Add(label8);
-            Controls.Add(pictureBox3);
-            Controls.Add(label5);
-            Controls.Add(label6);
-            Controls.Add(pictureBox2);
-            Controls.Add(label3);
-            Controls.Add(label4);
-            Controls.Add(pictureBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(buttonAddProduct4);
+            Controls.Add(buttonAddProduct3);
+            Controls.Add(buttonAddProduct2);
+            Controls.Add(buttonAddProduct1);
+            Controls.Add(pictureBoxProduct4);
+            Controls.Add(labelProduct4Price);
+            Controls.Add(labelProduct4Name);
+            Controls.Add(pictureBoxProduct3);
+            Controls.Add(labelProduct3Price);
+            Controls.Add(labelProduct3Name);
+            Controls.Add(pictureBoxProduct2);
+            Controls.Add(labelProduct2Price);
+            Controls.Add(labelProduct2Name);
+            Controls.Add(pictureBoxProduct1);
+            Controls.Add(labelProduct1Price);
+            Controls.Add(labelProduct1Name);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "BrowseProductsForm";
             Text = "BrowseProductsForm";
             Load += BrowseProductsForm_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProduct1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProduct2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProduct3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProduct4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label label2;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private Label label3;
-        private Label label4;
-        private PictureBox pictureBox3;
-        private Label label5;
-        private Label label6;
-        private PictureBox pictureBox4;
-        private Label label7;
-        private Label label8;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
+        private Label labelProduct1Name;
+        private Label labelProduct1Price;
+        private PictureBox pictureBoxProduct1;
+        private PictureBox pictureBoxProduct2;
+        private Label labelProduct2Price;
+        private Label labelProduct2Name;
+        private PictureBox pictureBoxProduct3;
+        private Label labelProduct3Price;
+        private Label labelProduct3Name;
+        private PictureBox pictureBoxProduct4;
+        private Label labelProduct4Price;
+        private Label labelProduct4Name;
+        private Button buttonAddProduct1;
+        private Button buttonAddProduct2;
+        private Button buttonAddProduct3;
+        private Button buttonAddProduct4;
         private Button button5;
+        private Button buttonPreviousPage;
+        private Button buttonNextPage;
     }
 }

@@ -59,5 +59,15 @@ namespace Eshop.Properties {
                 resourceCulture = value;
             }
         }
+
+        internal static System.Drawing.Bitmap Arrow_Left
+        {
+            get
+            {
+                object obj = ResourceManager.GetObject("Arrow_Left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
     }
 }
