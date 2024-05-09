@@ -32,6 +32,7 @@ namespace Eshop.Views
             this.addProductToCart.Visible = false;
             this.productPriceLabel.Visible = false;
             this.productNameLabel.Visible = false;
+            this.productPictureBox.Visible = false;
         }
 
         public void ShowProduct()
@@ -39,6 +40,7 @@ namespace Eshop.Views
             this.addProductToCart.Visible = true;
             this.productPriceLabel.Visible = true;
             this.productNameLabel.Visible = true;
+            this.productPictureBox.Visible= true;
         }
     }
 }
