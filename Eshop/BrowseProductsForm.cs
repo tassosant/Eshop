@@ -47,23 +47,39 @@ namespace Eshop
 
         private void ShowProducts(int page)
         {
-            if(page > this.pages)
+            if(page > this.pages || page<=0)
             {
-                int firstProductIndex = this.pages*productsPerPage;
-                int lastProductIndex = firstProductIndex+this.lastPageProducts-1;
+                return;
+            }
+            if (page == this.pages && this.lastPageProducts>0)
+            {
+                int firstProductIndex = (page-1) * this.productsPerPage;
+                int lastProductIndex = firstProductIndex + this.lastPageProducts - 1;
                 int viewIndex = 0;
-                for(int productIndex = firstProductIndex;productIndex <= lastProductIndex; productIndex++)
+                for (int productIndex = firstProductIndex; productIndex <= lastProductIndex; productIndex++)
                 {
-                    MapProductDTOToView(this.productDTOs[productIndex],this.productPageViews[viewIndex]);
-                    
-                    viewIndex++;                        
+                    MapProductDTOToView(this.productDTOs[productIndex], this.productPageViews[viewIndex]);
+
+                    viewIndex++;
                 }
-                for (int hideIndex = viewIndex; hideIndex < this.productsPerPage;hideIndex++)
+                for (int hideIndex = viewIndex; hideIndex < this.productsPerPage; hideIndex++)
                 {
-                    ProductView productView = (ProductView) this.productPageViews[hideIndex];
+                    ProductView productView = (ProductView)this.productPageViews[hideIndex];
                     productView.HideProduct();
                 }
                 return;
+            }
+            else
+            {
+                int firstProductIndex = (page - 1) * this.productsPerPage;
+                int lastProductIndex = firstProductIndex + this.productsPerPage - 1;
+                int viewIndex = 0;
+                for (int productIndex = firstProductIndex; productIndex <= lastProductIndex; productIndex++)
+                {
+                    MapProductDTOToView(this.productDTOs[productIndex], this.productPageViews[viewIndex]);
+
+                    viewIndex++;
+                }
             }
             //this.SuspendLayout();
             //foreach (var item in products)
@@ -87,9 +103,17 @@ namespace Eshop
             MapProductFormControlsToProductViews();
             this.productService = new ProductService();
             this.productDTOs = new ArrayList(this.productService.GetAllProducts());
-            this.pages = this.productDTOs.Count/this.productsPerPage;
             this.lastPageProducts = this.productDTOs.Count%this.productsPerPage;
+            if(this.lastPageProducts == 0)
+            {
+                this.pages = this.productDTOs.Count/this.productsPerPage; 
+            }
+            else
+            {
+                this.pages = this.productDTOs.Count/this.productsPerPage + 1;
+            }
             this.selectedPage = 1;
+            ShowCurrentPageLabel();
         }
 
         private void ButtonAddProduct_Click(object sender, EventArgs e, int id)
@@ -139,12 +163,24 @@ namespace Eshop
 
         private void ButtonPreviousPage_Click(object sender, EventArgs e)
         {
-
+            if (this.selectedPage - 1 == 0)
+            {
+                return;
+            }
+            this.selectedPage--;
+            ShowProducts(this.selectedPage);
+            ShowCurrentPageLabel();
         }
 
         private void ButtonNextPage_Click(object sender, EventArgs e)
-        {
-
+        {            
+            if (this.selectedPage == this.pages)
+            {
+                return;
+            }
+            this.selectedPage++;
+            ShowProducts(this.selectedPage);
+            ShowCurrentPageLabel();
         }
 
       
@@ -215,6 +251,10 @@ namespace Eshop
             return productView;
         }
 
+        private void ShowCurrentPageLabel()
+        {
+            this.currentPageLabel.Text = this.selectedPage.ToString() + "/" + this.pages.ToString();
+        }
         
     }
 }

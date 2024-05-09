@@ -48,6 +48,7 @@
             button5 = new Button();
             buttonPreviousPage = new Button();
             buttonNextPage = new Button();
+            currentPageLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProduct1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProduct2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProduct3).BeginInit();
@@ -185,7 +186,6 @@
             buttonAddProduct1.TabIndex = 12;
             buttonAddProduct1.Text = "add";
             buttonAddProduct1.UseVisualStyleBackColor = true;
-            
             // 
             // buttonAddProduct2
             // 
@@ -196,7 +196,6 @@
             buttonAddProduct2.TabIndex = 13;
             buttonAddProduct2.Text = "add";
             buttonAddProduct2.UseVisualStyleBackColor = true;
-            
             // 
             // buttonAddProduct3
             // 
@@ -207,7 +206,6 @@
             buttonAddProduct3.TabIndex = 14;
             buttonAddProduct3.Text = "add";
             buttonAddProduct3.UseVisualStyleBackColor = true;
-            
             // 
             // buttonAddProduct4
             // 
@@ -218,7 +216,6 @@
             buttonAddProduct4.TabIndex = 15;
             buttonAddProduct4.Text = "add";
             buttonAddProduct4.UseVisualStyleBackColor = true;
-            
             // 
             // button5
             // 
@@ -238,9 +235,9 @@
             buttonPreviousPage.BackgroundImageLayout = ImageLayout.Stretch;
             buttonPreviousPage.FlatAppearance.BorderSize = 0;
             buttonPreviousPage.FlatStyle = FlatStyle.Flat;
-            buttonPreviousPage.Location = new Point(30, 283);
+            buttonPreviousPage.Location = new Point(51, 283);
             buttonPreviousPage.Name = "buttonPreviousPage";
-            buttonPreviousPage.Size = new Size(92, 65);
+            buttonPreviousPage.Size = new Size(60, 40);
             buttonPreviousPage.TabIndex = 17;
             buttonPreviousPage.UseVisualStyleBackColor = false;
             buttonPreviousPage.Click += ButtonPreviousPage_Click;
@@ -252,18 +249,28 @@
             buttonNextPage.BackgroundImageLayout = ImageLayout.Stretch;
             buttonNextPage.FlatAppearance.BorderSize = 0;
             buttonNextPage.FlatStyle = FlatStyle.Flat;
-            buttonNextPage.Location = new Point(162, 283);
+            buttonNextPage.Location = new Point(127, 283);
             buttonNextPage.Name = "buttonNextPage";
-            buttonNextPage.Size = new Size(92, 65);
+            buttonNextPage.Size = new Size(60, 40);
             buttonNextPage.TabIndex = 19;
             buttonNextPage.UseVisualStyleBackColor = false;
             buttonNextPage.Click += ButtonNextPage_Click;
+            // 
+            // currentPageLabel
+            // 
+            currentPageLabel.AutoSize = true;
+            currentPageLabel.Location = new Point(51, 331);
+            currentPageLabel.Name = "currentPageLabel";
+            currentPageLabel.Size = new Size(50, 20);
+            currentPageLabel.TabIndex = 20;
+            currentPageLabel.Text = "label1";
             // 
             // BrowseProductsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(640, 360);
+            Controls.Add(currentPageLabel);
             Controls.Add(buttonNextPage);
             Controls.Add(buttonPreviousPage);
             Controls.Add(button5);
@@ -316,5 +323,6 @@
         private Button button5;
         private Button buttonPreviousPage;
         private Button buttonNextPage;
+        private Label currentPageLabel;
     }
 }
