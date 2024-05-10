@@ -28,70 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            richTextBox1 = new RichTextBox();
             label1 = new Label();
             label2 = new Label();
             button1 = new Button();
+            ProductsDataGridView = new DataGridView();
+            updateCartButton = new Button();
+            ((System.ComponentModel.ISupportInitialize)ProductsDataGridView).BeginInit();
             SuspendLayout();
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(58, 59);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(386, 255);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
-            richTextBox1.TextChanged += richTextBox1_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(58, 366);
+            label1.Location = new Point(46, 293);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(48, 25);
+            label1.Size = new Size(40, 20);
             label1.TabIndex = 1;
             label1.Text = "total";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(385, 366);
+            label2.Location = new Point(308, 293);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(59, 25);
+            label2.Size = new Size(50, 20);
             label2.TabIndex = 2;
             label2.Text = "label2";
             label2.Click += label2_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(567, 137);
+            button1.Location = new Point(454, 110);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(143, 62);
+            button1.Size = new Size(114, 50);
             button1.TabIndex = 3;
             button1.Text = "checkout";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // ProductsDataGridView
+            // 
+            ProductsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            ProductsDataGridView.Location = new Point(11, 30);
+            ProductsDataGridView.Margin = new Padding(2);
+            ProductsDataGridView.Name = "ProductsDataGridView";
+            ProductsDataGridView.RowHeadersWidth = 82;
+            ProductsDataGridView.RowTemplate.Height = 41;
+            ProductsDataGridView.Size = new Size(410, 188);
+            ProductsDataGridView.TabIndex = 4;
+            // 
+            // updateCartButton
+            // 
+            updateCartButton.Location = new Point(454, 209);
+            updateCartButton.Name = "updateCartButton";
+            updateCartButton.Size = new Size(126, 29);
+            updateCartButton.TabIndex = 5;
+            updateCartButton.Text = "Update Cart";
+            updateCartButton.UseVisualStyleBackColor = true;
+            updateCartButton.Click += UpdateCartButton_Click;
+            // 
             // CartForm
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(640, 360);
+            Controls.Add(updateCartButton);
+            Controls.Add(ProductsDataGridView);
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(richTextBox1);
+            Margin = new Padding(2);
             Name = "CartForm";
             Text = "CartForm";
+            ((System.ComponentModel.ISupportInitialize)ProductsDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private RichTextBox richTextBox1;
         private Label label1;
         private Label label2;
         private Button button1;
+        private DataGridView ProductsDataGridView;
+        private Button updateCartButton;
     }
 }

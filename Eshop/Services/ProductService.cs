@@ -49,6 +49,11 @@ namespace Eshop.Services
             }
         }
 
+        public Product GetProductById(int id)
+        {
+            return ProductRepository.GetProductById(id);
+        }
+
         
     }
 }

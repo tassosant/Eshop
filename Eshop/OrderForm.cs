@@ -1,4 +1,5 @@
-﻿using Eshop.Models.CashRegister;
+﻿using Eshop.DTOs;
+using Eshop.Models.CashRegister;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,11 +21,11 @@ namespace Eshop
         ArrayList cart;
         float total;
         
-        public OrderForm(int userID, ArrayList cart, float total)
+        public OrderForm(int userID)
         {
-            this.cart = cart;
+            
             this.userID = userID;
-            this.total = total;
+            
             InitializeComponent();
             label2.Text=total.ToString();
         }

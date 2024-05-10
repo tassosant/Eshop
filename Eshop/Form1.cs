@@ -8,7 +8,7 @@ namespace Eshop
     public partial class Form1 : Form
     {
         ArrayList cart = new ArrayList();
-        int userID = 0;
+        int userID = 1;
         public Form1()
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace Eshop
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CartForm cartform = new CartForm(cart, userID);
+            CartForm cartform = new CartForm(userID);
             cartform.ShowDialog();
         }
     }

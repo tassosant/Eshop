@@ -67,5 +67,12 @@ namespace Eshop.Services
             return cartDTO;
         }
 
+        public void SaveCart(CartDTO cartDTO)
+        {
+            CartMap cartMap = new CartMap();
+            Cart cart = cartMap.CartDTOToCart(cartDTO);
+            CartRepository.Save(cart);
+        }
+
     }
 }

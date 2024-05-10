@@ -36,7 +36,7 @@ namespace Eshop
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CartForm cartform = new CartForm(cart,  userID);
+            CartForm cartform = new CartForm(userID);
             cartform.ShowDialog();
         }
     }
