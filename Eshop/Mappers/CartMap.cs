@@ -60,7 +60,7 @@ namespace Eshop.Mappers
                 int items = productsDTO[productDTO];
                 if (products.ContainsKey(productDTO.ProductId))
                 {
-                    products[productDTO.ProductId]+=items;
+                    products[productDTO.ProductId]=items;
                 }
                 else
                 {
