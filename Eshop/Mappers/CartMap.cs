@@ -56,8 +56,16 @@ namespace Eshop.Mappers
             Dictionary<int,int> products = new Dictionary<int,int>();
             foreach (var productDTO in productsDTO.Keys)
             {
+                
                 int items = productsDTO[productDTO];
-                products.Add(productDTO.ProductId, items);
+                if (products.ContainsKey(productDTO.ProductId))
+                {
+                    products[productDTO.ProductId]+=items;
+                }
+                else
+                {
+                    products.Add(productDTO.ProductId, items);
+                }
             }
             return products;
         }

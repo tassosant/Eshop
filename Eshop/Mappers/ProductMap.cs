@@ -54,6 +54,20 @@ namespace Eshop.Mappers
             productDTO.CategoryId=category.CategoryId;
             productDTO.CategoryName=category.CategoryName;
             return productDTO;
+        } 
+        public ProductDTO MapProductToProductDTO(Product product, int quantity)
+        {
+            ProductDTO productDTO = new ProductDTO();
+            productDTO.Id = product.ProductId;
+            productDTO.Name=product.Name; 
+            productDTO.Image = product.Image;
+            productDTO.Description=product.Description; 
+            productDTO.Price = product.Price;
+            productDTO.Quantity = quantity;
+            Category category = ConvertCategoryIdToCategory(product.CategoryId);
+            productDTO.CategoryId=category.CategoryId;
+            productDTO.CategoryName=category.CategoryName;
+            return productDTO;
         }
 
         public ProductDTO MapProductToProductDTO(Product product,Category category)

@@ -18,6 +18,7 @@ namespace Eshop
     public partial class BrowseProductsForm : Form
     {
         ProductService productService;
+        CartService cartService;
         ArrayList cart = new ArrayList();
         int userID;
         ArrayList products = new ArrayList();
@@ -102,6 +103,7 @@ namespace Eshop
         {
             MapProductFormControlsToProductViews();
             this.productService = new ProductService();
+            this.cartService = new CartService();
             this.productDTOs = new ArrayList(this.productService.GetAllProducts());
             this.lastPageProducts = this.productDTOs.Count%this.productsPerPage;
             if(this.lastPageProducts == 0)
@@ -119,6 +121,10 @@ namespace Eshop
         private void ButtonAddProduct_Click(object sender, EventArgs e, int id)
         {
              MessageBox.Show("id:"+id+" added to cart");
+            ProductView productView = sender as ProductView;
+            int quantity = 1;
+            CartDTO cartDTO = cartService.AddProductToCart(this.userID, id, quantity);
+            cartService.SaveCart(cartDTO);
         }
 
         private void ButtonAddProduct1_Click(object sender, EventArgs e)

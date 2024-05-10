@@ -16,9 +16,15 @@ namespace Eshop.Services
     {
         CartRepository CartRepository {  get; set; }
         UserRepository UserRepository { get; set; }
+
+        ProductRepository ProductRepository { get; set; }
+
+        ProductMap ProductMap { get; set; } 
         public CartService() { 
             CartRepository = new CartRepository();
             UserRepository = new UserRepository();
+            ProductRepository = new ProductRepository();
+            ProductMap = new ProductMap();
         }
 
         
@@ -56,7 +62,7 @@ namespace Eshop.Services
             {
                 cartDTO.Products = new Dictionary<Product, int>();
             }
-            if (cartDTO.Products[product] == null)
+            if (!cartDTO.Products.ContainsKey(product))
             {
                 cartDTO.Products.Add(product, items);
             }
@@ -65,6 +71,15 @@ namespace Eshop.Services
                 cartDTO.Products[product] = items;
             }
             return cartDTO;
+        }
+        
+
+        public CartDTO AddProductToCart(int userId,int productId,int items)
+        {
+            
+            Product product = ProductRepository.GetProductById(productId);
+            ProductDTO productDTO = ProductMap.MapProductToProductDTO(product, items);
+            return AddProductToCart(userId, productDTO, items);
         }
 
         public void SaveCart(CartDTO cartDTO)

@@ -70,6 +70,8 @@
             // 
             // ProductsDataGridView
             // 
+            ProductsDataGridView.AllowUserToAddRows = false;
+            ProductsDataGridView.AllowUserToDeleteRows = false;
             ProductsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ProductsDataGridView.Location = new Point(11, 30);
             ProductsDataGridView.Margin = new Padding(2);
