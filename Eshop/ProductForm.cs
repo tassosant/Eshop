@@ -15,12 +15,12 @@ namespace Eshop
     public partial class ProductForm : Form
     {
         ArrayList cart = new ArrayList();
-        int userID;
+        public int UserID {  get; set; }
         public ProductForm(int userID, ArrayList cart)
         {
             InitializeComponent();
             this.cart = cart;
-            this.userID = userID;
+            this.UserID = userID;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,7 +36,7 @@ namespace Eshop
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CartForm cartform = new CartForm(userID);
+            CartForm cartform = new CartForm(UserID);
             cartform.ShowDialog();
         }
     }

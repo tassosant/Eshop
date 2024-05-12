@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             UserDataGridView = new DataGridView();
             IdColumn = new DataGridViewTextBoxColumn();
             RoleColumn = new DataGridViewTextBoxColumn();
@@ -35,6 +36,7 @@
             EmailColumn = new DataGridViewTextBoxColumn();
             SaveButton = new Button();
             DeleteButton = new Button();
+            navbar1 = new CustomComponents.Navbar(components);
             ((System.ComponentModel.ISupportInitialize)UserDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -43,11 +45,12 @@
             UserDataGridView.AllowDrop = true;
             UserDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             UserDataGridView.Columns.AddRange(new DataGridViewColumn[] { IdColumn, RoleColumn, UsernameColumn, EmailColumn });
-            UserDataGridView.Location = new Point(23, 12);
+            UserDataGridView.Location = new Point(38, 127);
+            UserDataGridView.Margin = new Padding(5, 5, 5, 5);
             UserDataGridView.Name = "UserDataGridView";
             UserDataGridView.RowHeadersWidth = 51;
             UserDataGridView.RowTemplate.Height = 29;
-            UserDataGridView.Size = new Size(555, 188);
+            UserDataGridView.Size = new Size(902, 301);
             UserDataGridView.TabIndex = 0;
             // 
             // IdColumn
@@ -84,9 +87,10 @@
             // 
             // SaveButton
             // 
-            SaveButton.Location = new Point(483, 241);
+            SaveButton.Location = new Point(786, 494);
+            SaveButton.Margin = new Padding(5, 5, 5, 5);
             SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(94, 29);
+            SaveButton.Size = new Size(153, 46);
             SaveButton.TabIndex = 1;
             SaveButton.Text = "Save";
             SaveButton.UseVisualStyleBackColor = true;
@@ -94,26 +98,40 @@
             // 
             // DeleteButton
             // 
-            DeleteButton.Location = new Point(316, 241);
+            DeleteButton.Location = new Point(515, 494);
+            DeleteButton.Margin = new Padding(5, 5, 5, 5);
             DeleteButton.Name = "DeleteButton";
-            DeleteButton.Size = new Size(149, 29);
+            DeleteButton.Size = new Size(242, 46);
             DeleteButton.TabIndex = 2;
             DeleteButton.Text = "Delete Selected";
             DeleteButton.UseVisualStyleBackColor = true;
-            DeleteButton.Click += this.DeleteButton_Click;
+            DeleteButton.Click += DeleteButton_Click;
+            // 
+            // navbar1
+            // 
+            navbar1.ImageScalingSize = new Size(32, 32);
+            navbar1.Location = new Point(0, 0);
+            navbar1.Name = "navbar1";
+            navbar1.Size = new Size(1300, 42);
+            navbar1.TabIndex = 3;
+            navbar1.Text = "navbar1";
             // 
             // UserAdministrationForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1300, 720);
             Controls.Add(DeleteButton);
             Controls.Add(SaveButton);
             Controls.Add(UserDataGridView);
+            Controls.Add(navbar1);
+            MainMenuStrip = navbar1;
+            Margin = new Padding(5, 5, 5, 5);
             Name = "UserAdministrationForm";
             Text = "UserAdministrationForm1";
             ((System.ComponentModel.ISupportInitialize)UserDataGridView).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -125,5 +143,6 @@
         private DataGridViewTextBoxColumn EmailColumn;
         private Button SaveButton;
         private Button DeleteButton;
+        private CustomComponents.Navbar navbar1;
     }
 }

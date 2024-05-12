@@ -16,8 +16,16 @@ namespace Eshop.Forms
     {
         UserService UserService;
         BindingList<UserDTO> UserDTOs;
+        public int UserID {  get; set; }
         public UserAdministrationForm()
         {
+            InitializeComponent();
+            InitProperties();
+            FillDatagrid();
+        }
+        public UserAdministrationForm(int userId)
+        {
+            this.UserID = userId;
             InitializeComponent();
             InitProperties();
             FillDatagrid();

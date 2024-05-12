@@ -26,15 +26,20 @@ namespace Eshop
         ProductService productService;
         BindingList<ProductCartView> productCartView;
         CartDTO cartDTO;
-        int userId;
+        public int UserID {  get; set; }
         public CartForm(int userID)
         {
-            this.userId = userID;
+            this.UserID = userID;
             InitializeComponent();
             InitProperties();
             InitDataGrid();
-
-
+        }
+        public CartForm()
+        {
+        
+            InitializeComponent();
+            InitProperties();
+            InitDataGrid();
         }
 
         private void InitDataGrid()
@@ -68,7 +73,7 @@ namespace Eshop
         {
             this.cartService = new CartService();
             this.productService = new ProductService();
-            this.cartDTO = this.cartService.GetOrCreateCart(this.userId);
+            this.cartDTO = this.cartService.GetOrCreateCart(this.UserID);
             this.productCartView = CartDTOToProductCartView(this.cartDTO);
         }
 
@@ -123,7 +128,7 @@ namespace Eshop
         private void button1_Click(object sender, EventArgs e)
         {
             // create order
-            OrderForm b = new OrderForm(this.userId);
+            OrderForm b = new OrderForm(this.UserID);
             b.ShowDialog();
         }
 

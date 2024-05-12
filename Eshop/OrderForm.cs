@@ -17,14 +17,22 @@ namespace Eshop
 {
     public partial class OrderForm : Form
     {
-        int userID;
+        public int UserID { get; set; }
         ArrayList cart;
         float total;
         
         public OrderForm(int userID)
         {
             
-            this.userID = userID;
+            this.UserID = userID;
+            
+            InitializeComponent();
+            label2.Text=total.ToString();
+        } 
+        public OrderForm()
+        {
+            
+            
             
             InitializeComponent();
             label2.Text=total.ToString();

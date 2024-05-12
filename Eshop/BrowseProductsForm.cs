@@ -20,7 +20,7 @@ namespace Eshop
         ProductService productService;
         CartService cartService;
         ArrayList cart = new ArrayList();
-        int userID;
+        public int UserID { get; set; }
         ArrayList products = new ArrayList();
         ArrayList productPageViews = new ArrayList();
         ArrayList productDTOs = new ArrayList();
@@ -30,20 +30,27 @@ namespace Eshop
         int selectedPage;
 
 
-        public BrowseProductsForm(int userID, ArrayList cart)
+        public BrowseProductsForm(int userID)
         {
             InitializeComponent();
             InitProperties();
             ShowProducts(1);
             
             
-            this.cart = cart;
-            this.userID = userID;
+            
+            this.UserID = userID;
             //products.Add("product1");
             //products.Add("product2");
             //products.Add("product3");
             //ShowProducts(products);
 
+        }
+
+        public BrowseProductsForm()
+        {
+            InitializeComponent();
+            InitProperties();
+            ShowProducts(1);
         }
 
         private void ShowProducts(int page)
@@ -123,7 +130,7 @@ namespace Eshop
              MessageBox.Show("id:"+id+" added to cart");
             ProductView productView = sender as ProductView;
             int quantity = 1;
-            CartDTO cartDTO = cartService.AddProductToCart(this.userID, id, quantity);
+            CartDTO cartDTO = cartService.AddProductToCart(this.UserID, id, quantity);
             cartService.SaveCart(cartDTO);
         }
 
@@ -157,13 +164,13 @@ namespace Eshop
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             // view teapot
-            ProductForm productForm = new ProductForm(userID, cart);
+            ProductForm productForm = new ProductForm(UserID, cart);
             productForm.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            CartForm cartform = new CartForm(userID);
+            CartForm cartform = new CartForm(UserID);
             cartform.ShowDialog();
         }
 

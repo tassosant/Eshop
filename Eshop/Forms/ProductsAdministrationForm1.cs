@@ -21,6 +21,17 @@ namespace Eshop.Forms
         ProductService productService;
         BindingList<ProductDTO> ProductDTOs { get; set; }
 
+        public int UserID { get; set; }
+
+        public ProductsAdministrationForm(int userID)
+        {
+            this.UserID = userID;
+            InitializeComponent();            
+            InitProperties();
+            MakeDropDownMenu();
+            AddEvents();
+        }
+
         public ProductsAdministrationForm()
         {
             InitializeComponent();

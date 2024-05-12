@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             ProductsDataGridView = new DataGridView();
             SaveButton = new Button();
             DeleteButton = new Button();
             EditCategoriesButton = new Button();
+            navbar1 = new CustomComponents.Navbar(components);
             ((System.ComponentModel.ISupportInitialize)ProductsDataGridView).BeginInit();
             SuspendLayout();
             // 
             // ProductsDataGridView
             // 
             ProductsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ProductsDataGridView.Location = new Point(2, 48);
+            ProductsDataGridView.Location = new Point(0, 61);
             ProductsDataGridView.Name = "ProductsDataGridView";
             ProductsDataGridView.RowHeadersWidth = 82;
             ProductsDataGridView.RowTemplate.Height = 41;
@@ -74,6 +76,15 @@
             EditCategoriesButton.UseVisualStyleBackColor = true;
             EditCategoriesButton.Click += EditCategoriesButton_Click;
             // 
+            // navbar1
+            // 
+            navbar1.ImageScalingSize = new Size(32, 32);
+            navbar1.Location = new Point(0, 0);
+            navbar1.Name = "navbar1";
+            navbar1.Size = new Size(1376, 40);
+            navbar1.TabIndex = 4;
+            navbar1.Text = "navbar1";
+            // 
             // ProductsAdministrationForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -83,10 +94,13 @@
             Controls.Add(DeleteButton);
             Controls.Add(SaveButton);
             Controls.Add(ProductsDataGridView);
+            Controls.Add(navbar1);
+            MainMenuStrip = navbar1;
             Name = "ProductsAdministrationForm";
             Text = "ProductsAdministrationForm1";
             ((System.ComponentModel.ISupportInitialize)ProductsDataGridView).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -95,5 +109,6 @@
         private Button SaveButton;
         private Button DeleteButton;
         private Button EditCategoriesButton;
+        private CustomComponents.Navbar navbar1;
     }
 }

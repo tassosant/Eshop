@@ -13,11 +13,24 @@ namespace Eshop
 {
     public partial class PaypallGateForm : Form
     {
+        public int UserID {  get; set; }
         public PaypallGateForm(float total)
         {
             InitializeComponent();
             label3.Text = total.ToString();
         }
+        public PaypallGateForm(int userID)
+        {
+            InitializeComponent();            
+            this.UserID = userID;    
+        }
+         public PaypallGateForm()
+        {
+            InitializeComponent();            
+            
+        }
+
+
 
         private void label4_Click(object sender, EventArgs e)
         {
