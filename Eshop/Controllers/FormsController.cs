@@ -40,13 +40,13 @@ namespace Eshop.Controllers
                 
                 Form form = (Form)Activator.CreateInstance(formType, new object[] { userId });
                 //Form form = (Form)Activator.CreateInstance(formType);
-                HandleUserId(form, formType);
                 
                 openForms.Add(formType, form);
                 //openForms[formType].FormClosed += (sender, e) => openForms.Remove(formType);
                 openForms[(formType)].Disposed += (sender, e) => openForms.Remove(formType);
 
             }
+            HandleUserId(openForms[formType], formType);
 
 
             openForms[formType].Show();
@@ -61,6 +61,7 @@ namespace Eshop.Controllers
             Navbar navbar = (Navbar)navbar1.GetValue(form);
             PropertyInfo user = type.GetProperty("UserID");
             navbar.UpdateUserID(type,(int) user.GetValue(form));
+            navbar.CheckForPermissions();
         }
     }
 }

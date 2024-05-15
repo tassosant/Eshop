@@ -14,6 +14,7 @@ namespace Eshop
             this.UserID = 1;
             InitializeComponent();          
             this.navbar1.UserID = this.UserID;
+            this.navbar1.CheckForPermissions();
         }
 
         public Form1(int userID)
@@ -21,6 +22,7 @@ namespace Eshop
             this.UserID=userID;
             InitializeComponent();
             this.navbar1.UserID=userID;
+            this.navbar1.CheckForPermissions();
         }
 
         private void viewProducts(object sender, EventArgs e)

@@ -51,7 +51,7 @@ namespace Eshop.Forms
             this.fields.Add(this.EmailTextBox);
         }
 
-        private void EmptyFields()
+        private void ClearFields()
         {
             foreach (TextBox field in this.fields)
             {
@@ -59,7 +59,7 @@ namespace Eshop.Forms
             }
         }
 
-        private void EmptyErrorLabels()
+        private void ClearErrorLabels()
         {
             foreach(Label label in this.errorLabels)
             {
@@ -79,8 +79,10 @@ namespace Eshop.Forms
                 if(created)
                 {
                     Debug.WriteLine("User registered");
-                    EmptyErrorLabels();
-                    EmptyFields();
+                    ClearErrorLabels();
+                    ClearFields();
+                    LoginForm loginForm = new LoginForm();
+                    loginForm.ShowDialog();
                     //go to next form
                 }
                 Debug.WriteLine("User could not register");

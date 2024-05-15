@@ -14,9 +14,11 @@ namespace Eshop.Services
     internal class UserService
     {
         UserRepository UserRepository;
+        RoleRepository RoleRepository;
         public UserService()
         {
             UserRepository = new UserRepository();
+            RoleRepository = new RoleRepository();
         }
 
         public List<UserDTO> GetAllUsers()
@@ -57,6 +59,21 @@ namespace Eshop.Services
                 users.Add(user);
             }
             UserRepository.SaveAll(users);
+        }
+
+        public Boolean IsAdmin(int userID)
+        {
+            UserAbstract user = UserRepository.GetUserById(userID);
+            int roleId = user.RoleId;
+            Role role = RoleRepository.GetRoleById(roleId);
+            if(role != null)
+            {
+                if(role.RoleDescription.Equals("admin") || role.RoleDescription.Equals("Admin"))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

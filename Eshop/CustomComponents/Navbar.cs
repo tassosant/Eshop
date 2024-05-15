@@ -1,5 +1,6 @@
 ﻿using Eshop.Controllers;
 using Eshop.Forms;
+using Eshop.Services;
 using Eshop.Views;
 using System;
 using System.Collections;
@@ -22,29 +23,58 @@ namespace Eshop.CustomComponents
 
         private ArrayList menuItemViews;
 
+        private ArrayList adminMenuItems;
+
+        private UserService UserService;
+
         public int UserID {  get; set; }
         public Navbar()
         {
             InitializeComponent();
+            InitProperties();
             CollectMenuItems();
             MakeMenuItemsVisible();
             AddEventsInMenuItems();
+            CheckForPermissions();
+            
         }
 
         public Navbar(IContainer container)
         {
             container.Add(this);
             InitializeComponent();
+            InitProperties();
             CollectMenuItems();
             MakeMenuItemsVisible();
             AddEventsInMenuItems();
+            CheckForPermissions();
+        }
+
+        private void InitProperties()
+        {
+            this.menuItems = new Hashtable();
+            this.menuItemViews = new ArrayList();
+            this.adminMenuItems = new ArrayList();
+            this.UserService = new UserService();
+        }
+
+        public void CheckForPermissions()
+        {
+            if (this.UserID == 0)
+            {
+                return;
+            }
+            foreach (StripMenuItemView item in adminMenuItems)
+            {
+                item.ToolStripMenuItem.Visible = this.UserService.IsAdmin(this.UserID);                
+            }
         }
 
         private void CollectMenuItems()
         {
             this.SuspendLayout();
 
-            this.menuItems = new Hashtable();
+            
             
             this.menuItems.Add(this.productsAdministrationFormStripMenuItem,typeof(ProductsAdministrationForm));
             this.menuItems.Add(this.userAdministrationFormStripMenuItem,typeof(UserAdministrationForm));
@@ -54,7 +84,7 @@ namespace Eshop.CustomComponents
             this.menuItems.Add(this.paypalGateFormStripMenuItem,typeof(PaypallGateForm));
             this.menuItems.Add(this.aboutStripMenuItem,typeof(MessageBox));
 
-            this.menuItemViews = new ArrayList();            
+                      
             this.menuItemViews.Add(new StripMenuItemView(this.productsAdministrationFormStripMenuItem,typeof(ProductsAdministrationForm)));
             this.menuItemViews.Add(new StripMenuItemView(this.userAdministrationFormStripMenuItem,typeof(UserAdministrationForm)));
             this.menuItemViews.Add(new StripMenuItemView(this.browseProductsFormStripMenuItem,typeof(BrowseProductsForm)));
@@ -62,6 +92,11 @@ namespace Eshop.CustomComponents
             this.menuItemViews.Add(new StripMenuItemView(this.orderFormStripMenuItem,typeof(OrderForm)));
             this.menuItemViews.Add(new StripMenuItemView(this.paypalGateFormStripMenuItem,typeof(PaypallGateForm)));
             this.menuItemViews.Add(new StripMenuItemView(this.aboutStripMenuItem, typeof(MessageBox)));
+
+            
+            this.adminMenuItems.Add(new StripMenuItemView(this.userAdministrationFormStripMenuItem,typeof(UserAdministrationForm)));
+            this.adminMenuItems.Add(new StripMenuItemView(this.productsAdministrationFormStripMenuItem,typeof(ProductsAdministrationForm)));
+            
 
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -71,6 +106,7 @@ namespace Eshop.CustomComponents
         {
             //StripMenuItemView menuItemView = FindByType(type);
             //menuItemView.UserID = userID;
+            
             foreach (StripMenuItemView stripMenuItemView in this.menuItemViews)
             {
                 stripMenuItemView.UserID = userID;

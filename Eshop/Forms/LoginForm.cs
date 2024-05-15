@@ -16,6 +16,7 @@ namespace Eshop.Forms
     public partial class LoginForm : Form
     {
         LoginFormService loginFormService;
+        public UserAbstract User {  get; set; }
         public LoginForm()
         {
             InitializeComponent();
@@ -35,6 +36,8 @@ namespace Eshop.Forms
             {
                 this.ErrorLoginLabel.Hide();
                 Debug.WriteLine("User found");
+                Form1 homeUserForm = new Form1(User.UserId);
+                homeUserForm.ShowDialog();
             }
             else
             {
@@ -49,7 +52,8 @@ namespace Eshop.Forms
                 UserAbstract user = this.loginFormService.GetUser(this.UserNameTextBox.Text);
                 if (user != null )
                 {
-                    if(user.Password == this.PasswordTextBox.Text) {
+                    if(user.Password.Equals(this.PasswordTextBox.Text)) {
+                        User = user; 
                         return true;
                     }
                     else

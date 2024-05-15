@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Eshop.Models.Account
 {
-    internal class UserAbstract
+    public class UserAbstract
     {
         public int UserId { get; set; }        
         public int RoleId { get; set; }
@@ -17,7 +17,8 @@ namespace Eshop.Models.Account
 
         
 
-
+        public UserAbstract() { 
+        }
 
 
 
