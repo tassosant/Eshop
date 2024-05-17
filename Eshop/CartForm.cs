@@ -27,26 +27,29 @@ namespace Eshop
         UserService userService;
         BindingList<ProductCartView> productCartView;
         CartDTO cartDTO;
-        public int UserID {  get; set; }
+        public int UserID { get; set; }
         public CartForm(int userID)
         {
             this.UserID = userID;
             InitializeComponent();
-            InitProperties();
-            InitDataGrid();
+            RunFormPropertiesInitializingFunctions();
         }
         public CartForm()
         {
             InitializeComponent();
+            RunFormPropertiesInitializingFunctions();
+        }
+
+        public void RunFormPropertiesInitializingFunctions()
+        {
             InitProperties();
             InitDataGrid();
-           
         }
 
         private void InitDataGrid()
         {
             BindDatasourceToProductsCart();
-            if (this.ProductsDataGridView.Columns.Count==0)
+            if (this.ProductsDataGridView.Columns.Count == 0)
             {
                 this.ProductsDataGridView.Visible = false;
                 this.labelNoProducts.Visible = true;
@@ -152,6 +155,11 @@ namespace Eshop
         private void UpdateCartButton_Click(object sender, EventArgs e)
         {
             UpdateCart();
+        }
+
+        private void CartForm_Load(object sender, EventArgs e)
+        {
+            RunFormPropertiesInitializingFunctions();
         }
     }
 }

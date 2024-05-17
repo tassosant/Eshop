@@ -63,7 +63,7 @@
             // button1
             // 
             button1.Location = new Point(454, 110);
-            button1.Margin = new Padding(2, 2, 2, 2);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(114, 50);
             button1.TabIndex = 3;
@@ -77,7 +77,7 @@
             ProductsDataGridView.AllowUserToDeleteRows = false;
             ProductsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             ProductsDataGridView.Location = new Point(11, 30);
-            ProductsDataGridView.Margin = new Padding(2, 2, 2, 2);
+            ProductsDataGridView.Margin = new Padding(2);
             ProductsDataGridView.Name = "ProductsDataGridView";
             ProductsDataGridView.RowHeadersWidth = 82;
             ProductsDataGridView.RowTemplate.Height = 41;
@@ -127,9 +127,10 @@
             Controls.Add(label1);
             Controls.Add(navbar1);
             MainMenuStrip = navbar1;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "CartForm";
             Text = "CartForm";
+            Load += CartForm_Load;
             ((System.ComponentModel.ISupportInitialize)ProductsDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();

@@ -45,11 +45,31 @@ namespace Eshop.Controllers
                 //openForms[formType].FormClosed += (sender, e) => openForms.Remove(formType);
                 openForms[(formType)].Disposed += (sender, e) => openForms.Remove(formType);
 
+                HandleUserId(openForms[formType], formType);
+
+            
+                openForms[formType].Show();
             }
-            HandleUserId(openForms[formType], formType);
+            else
+            {
+                HandleUserId(openForms[formType], formType);
+                openForms[formType].Invalidate(true);
+                openForms[formType].Update();
+                openForms[formType].Refresh();
+            }
+            if(formType == typeof(CartForm)) {
+                
+                MethodInfo method = openForms[formType].GetType().GetMethod("RunFormPropertiesInitializingFunctions");
+                if(method != null)
+                {
 
-
-            openForms[formType].Show();
+                    openForms[formType].Invoke(new MethodInvoker(()=> method.Invoke(openForms[formType],null)));
+                                        
+                }
+                openForms[formType].Invalidate(true);
+                openForms[formType].Update();
+                openForms[formType].Refresh();
+            }
             openForms[formType].BringToFront();
 
         }
