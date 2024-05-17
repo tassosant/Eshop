@@ -1,6 +1,7 @@
 ﻿using Eshop.DTOs;
 using Eshop.Mappers;
 using Eshop.Models.Account;
+using Eshop.Models.CashRegister;
 using Eshop.Repositories;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,12 @@ namespace Eshop.Services
     {
         UserRepository UserRepository;
         RoleRepository RoleRepository;
+        CartRepository CartRepository;
         public UserService()
         {
             UserRepository = new UserRepository();
             RoleRepository = new RoleRepository();
+            CartRepository = new CartRepository();
         }
 
         public List<UserDTO> GetAllUsers()
@@ -75,5 +78,35 @@ namespace Eshop.Services
             }
             return false;
         }
+
+        public void CreateGuest()
+        {
+            UserAbstract guest = new UserAbstract();
+            guest.RoleId = 3;
+            guest.UserId = UserRepository.guestId;
+            Cart cart = new Cart();
+            cart.UserId = guest.UserId;
+            cart.CartId = guest.UserId;
+            CartRepository.Save(cart);
+            UserRepository.Save(guest);
+
+        }
+
+        public void CreateUser()
+        {
+            UserAbstract user = new UserAbstract();
+            user.RoleId = 1;
+            UserRepository.Save(user);
+
+
+        }
+
+        public int GetGuestId()
+        {
+            return UserRepository.GetUserById(100).UserId;
+        }
+
+
+        
     }
 }

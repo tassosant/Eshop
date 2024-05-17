@@ -6,11 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace Eshop.Repositories
 {
     internal class UserRepository
     {
+        public int guestId = 100;
         List<UserAbstract> Users { get; set; }
         JSONParser Parser { get; set; }
 
@@ -54,6 +56,10 @@ namespace Eshop.Repositories
         public void DeleteUserById(int id)
         {
             int index = Users.FindIndex(user => user.UserId == id);
+            if(index == -1)
+            {
+                return;
+            }
             Users.RemoveAt(index);
             Parser.OverwriteUsersJSON(Users);
         }
@@ -68,10 +74,27 @@ namespace Eshop.Repositories
 
         public void AddUser(UserAbstract user)
         {
-            List<UserAbstract> users = GetAllUsers().OrderBy(user => user.UserId).ToList();
-            user.UserId = users.Last().UserId+1;
+            if (user.UserId != guestId)
+            {
+                user.UserId = GetLastUserId();
+            }
             Users.Add(user);
             Parser.OverwriteUsersJSON(Users);
+        }
+
+        private int GetLastUserId()
+        {
+            List<UserAbstract> users = GetAllUsers().OrderBy(user => user.UserId).ToList();
+            int id = users.Last().UserId + 1;
+            if (id == guestId)
+            {
+                return guestId+1;
+            }
+            if(id == guestId+1)
+            {
+                return users[users.Count - 2].UserId;
+            }
+            return id;
         }
 
 

@@ -24,6 +24,7 @@ namespace Eshop
 
         CartService cartService;
         ProductService productService;
+        UserService userService;
         BindingList<ProductCartView> productCartView;
         CartDTO cartDTO;
         public int UserID {  get; set; }
@@ -36,15 +37,22 @@ namespace Eshop
         }
         public CartForm()
         {
-        
             InitializeComponent();
             InitProperties();
             InitDataGrid();
+           
         }
 
         private void InitDataGrid()
         {
             BindDatasourceToProductsCart();
+            if (this.ProductsDataGridView.Columns.Count==0)
+            {
+                this.ProductsDataGridView.Visible = false;
+                this.labelNoProducts.Visible = true;
+                return;
+            }
+            this.ProductsDataGridView.Visible = true;
             this.ProductsDataGridView.Columns["ProductId"].Visible = false;
             this.ProductsDataGridView.Columns["ProductId"].ReadOnly = true;
             this.ProductsDataGridView.Columns["ProductName"].ReadOnly = true;
@@ -73,6 +81,12 @@ namespace Eshop
         {
             this.cartService = new CartService();
             this.productService = new ProductService();
+            this.userService = new UserService();
+            this.labelNoProducts.Visible = false;
+            if (this.UserID == 0)
+            {
+                this.UserID = this.userService.GetGuestId();
+            }
             this.cartDTO = this.cartService.GetOrCreateCart(this.UserID);
             this.productCartView = CartDTOToProductCartView(this.cartDTO);
         }
@@ -81,7 +95,10 @@ namespace Eshop
         {
             productCartView = new BindingList<ProductCartView>();
             Dictionary<Product, int> productsDict = cartDTO.Products;
-
+            if (productsDict == null)
+            {
+                return null;
+            }
             foreach (KeyValuePair<Product, int> entry in productsDict)
             {
                 ProductCartView productCartView = new ProductCartView();

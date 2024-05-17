@@ -14,7 +14,7 @@ namespace Eshop
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
            // Application.Run(new ProductsAdministrationForm());
-            Application.Run(new LoginForm());
+            Application.Run(new WelcomeForm());
         }
     }
 }

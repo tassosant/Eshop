@@ -1,6 +1,7 @@
 using Eshop.MockDB;
 using Eshop.Models.CashRegister;
 using Eshop.Repositories;
+using Eshop.Services;
 using System.Collections;
 
 namespace Eshop
@@ -9,9 +10,11 @@ namespace Eshop
     {
         
         public int UserID {  get; set; }
+        UserService UserService { get; set; }
         public Form1()
         {
-            this.UserID = 1;
+            UserService = new UserService();
+            UserID = UserService.GetGuestId();
             InitializeComponent();          
             this.navbar1.UserID = this.UserID;
             this.navbar1.CheckForPermissions();
@@ -19,6 +22,7 @@ namespace Eshop
 
         public Form1(int userID)
         {
+            UserService = new UserService();
             this.UserID=userID;
             InitializeComponent();
             this.navbar1.UserID=userID;

@@ -3,9 +3,13 @@
       "RoleId": 1,
       "RoleDescription": "User"
     },
-    {
-      "RoleId": 2,
-      "RoleDescription": "Admin"
-    }
+  {
+    "RoleId": 2,
+    "RoleDescription": "Admin"
+  },
+  {
+    "RoleId": 3,
+    "RoleDescription": "Guest"
+  }
   ]
 

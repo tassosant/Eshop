@@ -89,5 +89,10 @@ namespace Eshop.Services
             CartRepository.Save(cart);
         }
 
+        public void DeleteCart(int userId)
+        {
+            CartRepository.DeleteCardById(userId);
+        }
+
     }
 }

@@ -15,6 +15,8 @@ namespace Eshop.Repositories
         List<Cart> Carts { get; set; }   
         JSONParser Parser { get; set; }
 
+        public int guestId = 100;
+
         public CartRepository() {
             Parser = new JSONParser();
             Carts = GetAllCarts();    
@@ -41,6 +43,10 @@ namespace Eshop.Repositories
         public void DeleteCardById(int id)
         {
             int index = Carts.FindIndex(cart => cart.CartId == id);
+            if (index == -1)
+            {
+                return;
+            }
             Carts.RemoveAt(index);
             Parser.OverwriteCartsJSON(Carts);
         }
@@ -56,7 +62,10 @@ namespace Eshop.Repositories
         public void AddCart(Cart cart)
         {
             List<Cart> carts = GetAllCarts().OrderBy(cart => cart.CartId).ToList();
-            cart.CartId = carts.Last().CartId + 1;
+            if (cart.CartId != guestId)
+            {
+                cart.CartId = carts.Last().CartId + 1;
+            }
             Carts.Add(cart);
             Parser.OverwriteCartsJSON(Carts);
         }
@@ -64,6 +73,7 @@ namespace Eshop.Repositories
         public void Save(Cart cart)
         {
             int id = cart.CartId;
+            
             if(GetCartById(id) != null)
             {
                 UpdateCart(cart);
