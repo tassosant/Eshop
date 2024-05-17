@@ -28,6 +28,7 @@ namespace Eshop
             
             InitializeComponent();
             label2.Text=total.ToString();
+            MakeStaticLocation();
         } 
         public OrderForm()
         {
@@ -36,6 +37,7 @@ namespace Eshop
             
             InitializeComponent();
             label2.Text=total.ToString();
+            MakeStaticLocation();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -72,6 +74,13 @@ namespace Eshop
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void MakeStaticLocation()
+        {
+            int offset = 20;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(100, 100);
         }
     }
 }

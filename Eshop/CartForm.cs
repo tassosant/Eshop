@@ -33,17 +33,20 @@ namespace Eshop
             this.UserID = userID;
             InitializeComponent();
             RunFormPropertiesInitializingFunctions();
+            
         }
         public CartForm()
         {
             InitializeComponent();
             RunFormPropertiesInitializingFunctions();
+            
         }
 
         public void RunFormPropertiesInitializingFunctions()
         {
             InitProperties();
             InitDataGrid();
+            MakeStaticLocation();
         }
 
         private void InitDataGrid()
@@ -160,6 +163,13 @@ namespace Eshop
         private void CartForm_Load(object sender, EventArgs e)
         {
             RunFormPropertiesInitializingFunctions();
+        }
+
+        private  void MakeStaticLocation()
+        {
+            int offset = 20;
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(100, 100);
         }
     }
 }

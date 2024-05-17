@@ -41,6 +41,7 @@ namespace Eshop.Controllers
                 Form form = (Form)Activator.CreateInstance(formType, new object[] { userId });
                 //Form form = (Form)Activator.CreateInstance(formType);
                 
+               
                 openForms.Add(formType, form);
                 //openForms[formType].FormClosed += (sender, e) => openForms.Remove(formType);
                 openForms[(formType)].Disposed += (sender, e) => openForms.Remove(formType);
@@ -83,5 +84,7 @@ namespace Eshop.Controllers
             navbar.UpdateUserID(type,(int) user.GetValue(form));
             navbar.CheckForPermissions();
         }
+
+        
     }
 }
