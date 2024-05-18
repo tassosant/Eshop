@@ -1,4 +1,5 @@
-﻿using Eshop.DTOs;
+﻿using Eshop.CustomComponents;
+using Eshop.DTOs;
 using Eshop.Services;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace Eshop.Forms
             InitializeComponent();
             InitProperties();
             FillDatagrid();
+            MakeStaticLocation();
         }
         public UserAdministrationForm(int userId)
         {
@@ -29,6 +31,7 @@ namespace Eshop.Forms
             InitializeComponent();
             InitProperties();
             FillDatagrid();
+            MakeStaticLocation();
         }
 
         private void InitProperties()
@@ -76,6 +79,12 @@ namespace Eshop.Forms
         {
             BindingList<UserDTO> userDTOs = this.UserDataGridView.DataSource as BindingList<UserDTO>;
             this.UserService.SaveAllUsers(new List<UserDTO>(userDTOs));
+        }
+
+        private void MakeStaticLocation()
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(Config.X, Config.Y);
         }
     }
 }

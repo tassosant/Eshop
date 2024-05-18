@@ -1,4 +1,5 @@
-﻿using Eshop.DTOs;
+﻿using Eshop.CustomComponents;
+using Eshop.DTOs;
 using Eshop.Models.CashRegister;
 using Eshop.Models.Store;
 using Eshop.Services;
@@ -167,9 +168,9 @@ namespace Eshop
 
         private  void MakeStaticLocation()
         {
-            int offset = 20;
+            
             this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point(100, 100);
+            this.Location = new Point(Config.X, Config.Y);
         }
     }
 }

@@ -1,3 +1,4 @@
+using Eshop.CustomComponents;
 using Eshop.MockDB;
 using Eshop.Models.CashRegister;
 using Eshop.Repositories;
@@ -15,18 +16,16 @@ namespace Eshop
         {
             UserService = new UserService();
             UserID = UserService.GetGuestId();
-            InitializeComponent();          
-            this.navbar1.UserID = this.UserID;
-            this.navbar1.CheckForPermissions();
+            InitializeComponent();                     
+            InitProperties();
         }
 
         public Form1(int userID)
         {
             UserService = new UserService();
             this.UserID=userID;
-            InitializeComponent();
-            this.navbar1.UserID=userID;
-            this.navbar1.CheckForPermissions();
+            InitializeComponent();           
+            InitProperties();
         }
 
         private void viewProducts(object sender, EventArgs e)
@@ -50,5 +49,18 @@ namespace Eshop
             CartForm cartform = new CartForm(UserID);
             cartform.ShowDialog();
         }
+
+        private void InitProperties()
+        {
+            this.navbar1.UserID = this.UserID;
+            this.navbar1.CheckForPermissions();
+            this.FormClosing += new FormClosingEventHandler(CloseForm);
+        }
+
+        private void CloseForm(object sender, FormClosingEventArgs e)
+        {
+            CloseFormHandler.HandleClosingForm(sender as Form,e);
+        }
+        
     }
 }

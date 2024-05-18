@@ -36,13 +36,14 @@
             orderFormStripMenuItem = new ToolStripMenuItem();
             paypalGateFormStripMenuItem = new ToolStripMenuItem();
             aboutStripMenuItem = new ToolStripMenuItem();
+            logoutStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(32, 32);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { productsAdministrationFormStripMenuItem, userAdministrationFormStripMenuItem, browseProductsFormStripMenuItem, cartFormStripMenuItem, orderFormStripMenuItem, paypalGateFormStripMenuItem, aboutStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { productsAdministrationFormStripMenuItem, userAdministrationFormStripMenuItem, browseProductsFormStripMenuItem, cartFormStripMenuItem, orderFormStripMenuItem, paypalGateFormStripMenuItem, aboutStripMenuItem, logoutStripMenuItem });
             menuStrip1.Name = "menuStrip1";
             menuStrip1.ShowItemToolTips = true;
             menuStrip1.Size = new Size(200, 24);
@@ -52,44 +53,50 @@
             // productsAdministrationFormStripMenuItem
             // 
             productsAdministrationFormStripMenuItem.Name = "productsAdministrationFormStripMenuItem";
-            productsAdministrationFormStripMenuItem.Size = new Size(173, 20);
+            productsAdministrationFormStripMenuItem.Size = new Size(110, 20);
             productsAdministrationFormStripMenuItem.Text = "Edit Products";
             // 
             // userAdministrationFormStripMenuItem
             // 
             userAdministrationFormStripMenuItem.Name = "userAdministrationFormStripMenuItem";
-            userAdministrationFormStripMenuItem.Size = new Size(138, 20);
+            userAdministrationFormStripMenuItem.Size = new Size(88, 20);
             userAdministrationFormStripMenuItem.Text = "Edit Users";
             // 
             // browseProductsFormStripMenuItem
             // 
             browseProductsFormStripMenuItem.Name = "browseProductsFormStripMenuItem";
-            browseProductsFormStripMenuItem.Size = new Size(204, 20);
+            browseProductsFormStripMenuItem.Size = new Size(128, 20);
             browseProductsFormStripMenuItem.Text = "Search Products";
             // 
             // cartFormStripMenuItem
             // 
             cartFormStripMenuItem.Name = "cartFormStripMenuItem";
-            cartFormStripMenuItem.Size = new Size(77, 20);
+            cartFormStripMenuItem.Size = new Size(50, 20);
             cartFormStripMenuItem.Text = "Cart";
             // 
             // orderFormStripMenuItem
             // 
             orderFormStripMenuItem.Name = "orderFormStripMenuItem";
-            orderFormStripMenuItem.Size = new Size(95, 20);
+            orderFormStripMenuItem.Size = new Size(61, 20);
             orderFormStripMenuItem.Text = "Order";
             // 
             // paypalGateFormStripMenuItem
             // 
             paypalGateFormStripMenuItem.Name = "paypalGateFormStripMenuItem";
-            paypalGateFormStripMenuItem.Size = new Size(102, 20);
+            paypalGateFormStripMenuItem.Size = new Size(66, 20);
             paypalGateFormStripMenuItem.Text = "Paypal";
             // 
             // aboutStripMenuItem
             // 
             aboutStripMenuItem.Name = "aboutStripMenuItem";
-            aboutStripMenuItem.Size = new Size(99, 20);
+            aboutStripMenuItem.Size = new Size(64, 20);
             aboutStripMenuItem.Text = "About";
+            // 
+            // logoutStripMenuItem
+            // 
+            logoutStripMenuItem.Name = "logoutStripMenuItem";
+            logoutStripMenuItem.Size = new Size(70, 20);
+            logoutStripMenuItem.Text = "Logout";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -105,5 +112,6 @@
         private ToolStripMenuItem orderFormStripMenuItem;
         private ToolStripMenuItem paypalGateFormStripMenuItem;
         private ToolStripMenuItem aboutStripMenuItem;
+        private ToolStripMenuItem logoutStripMenuItem;
     }
 }

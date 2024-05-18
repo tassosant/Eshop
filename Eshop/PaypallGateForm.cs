@@ -1,4 +1,5 @@
-﻿using Eshop.Models.CashRegister;
+﻿using Eshop.CustomComponents;
+using Eshop.Models.CashRegister;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,10 +24,12 @@ namespace Eshop
         {
             InitializeComponent();            
             this.UserID = userID;    
+            MakeStaticLocation();
         }
          public PaypallGateForm()
         {
-            InitializeComponent();            
+            InitializeComponent();       
+            MakeStaticLocation();
             
         }
 
@@ -87,6 +90,12 @@ namespace Eshop
             // return to home page - now the cart is empty
             Form1 f = new Form1();
             f.ShowDialog();
+        }
+
+        private void MakeStaticLocation()
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(Config.X, Config.Y);
         }
     }
 }

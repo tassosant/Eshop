@@ -40,7 +40,7 @@ namespace Eshop.Controllers
                 
                 Form form = (Form)Activator.CreateInstance(formType, new object[] { userId });
                 //Form form = (Form)Activator.CreateInstance(formType);
-                
+                AddFormCloseEventHandler(form);
                
                 openForms.Add(formType, form);
                 //openForms[formType].FormClosed += (sender, e) => openForms.Remove(formType);
@@ -85,6 +85,19 @@ namespace Eshop.Controllers
             navbar.CheckForPermissions();
         }
 
-        
+        private static void AddFormCloseEventHandler(Form form)
+        {
+            if (form.Text.Equals(Config.About))
+            {
+                return;
+            }
+            form.FormClosing += new FormClosingEventHandler(CloseForm);
+        }
+
+        private static void CloseForm(object sender, FormClosingEventArgs e)
+        {            
+            CloseFormHandler.HandleClosingForm(sender as Form,e);
+        }
+
     }
 }

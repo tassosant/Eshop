@@ -1,4 +1,5 @@
-﻿using Eshop.DTOs;
+﻿using Eshop.CustomComponents;
+using Eshop.DTOs;
 using Eshop.Services;
 using Eshop.Views;
 using System;
@@ -39,6 +40,7 @@ namespace Eshop
             
             
             this.UserID = userID;
+            MakeStaticLocation();
             //products.Add("product1");
             //products.Add("product2");
             //products.Add("product3");
@@ -51,6 +53,7 @@ namespace Eshop
             InitializeComponent();
             InitProperties();
             ShowProducts(1);
+            MakeStaticLocation();
         }
 
         private void ShowProducts(int page)
@@ -268,6 +271,12 @@ namespace Eshop
         {
             this.currentPageLabel.Text = this.selectedPage.ToString() + "/" + this.pages.ToString();
         }
-        
+
+
+        private void MakeStaticLocation()
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(Config.X, Config.Y);
+        }
     }
 }

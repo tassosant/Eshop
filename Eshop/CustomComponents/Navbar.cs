@@ -56,14 +56,20 @@ namespace Eshop.CustomComponents
             this.menuItemViews = new ArrayList();
             this.adminMenuItems = new ArrayList();
             this.UserService = new UserService();
+            this.logoutStripMenuItem.Visible = true;
         }
-
+        //handle not loggedin,guests and admins
         public void CheckForPermissions()
         {
+            if(this.UserService.GetGuestId() == this.UserID)
+            {
+                this.logoutStripMenuItem.Visible = false;
+            }
             if (this.UserID == 0)
             {
+                
                 return;
-            }
+            }            
             foreach (StripMenuItemView item in adminMenuItems)
             {
                 item.ToolStripMenuItem.Visible = this.UserService.IsAdmin(this.UserID);                
@@ -83,6 +89,7 @@ namespace Eshop.CustomComponents
             this.menuItems.Add(this.orderFormStripMenuItem,typeof(OrderForm));
             this.menuItems.Add(this.paypalGateFormStripMenuItem,typeof(PaypallGateForm));
             this.menuItems.Add(this.aboutStripMenuItem,typeof(MessageBox));
+            this.menuItems.Add(this.logoutStripMenuItem, typeof(LogoutType));
 
                       
             this.menuItemViews.Add(new StripMenuItemView(this.productsAdministrationFormStripMenuItem,typeof(ProductsAdministrationForm)));
@@ -145,7 +152,8 @@ namespace Eshop.CustomComponents
                     this.cartFormStripMenuItem,
                     this.orderFormStripMenuItem,
                     this.paypalGateFormStripMenuItem,
-                    this.aboutStripMenuItem
+                    this.aboutStripMenuItem,
+                    this.logoutStripMenuItem
                 });
             }
             this.ResumeLayout(false);
@@ -160,13 +168,17 @@ namespace Eshop.CustomComponents
         {
             foreach (ToolStripMenuItem item in this.menuItems.Keys)
             {
-                item.Click += (sender, e) => NavbarItemClicked(sender, e, (Type)this.menuItems[item]);
+                item.Click += (sender, e) => NavbarItemClicked(sender, e, this.menuItems[item]);
             }
         }
 
-        private void NavbarItemClicked(object sender, EventArgs e, Type formType)
+        private void NavbarItemClicked(object sender, EventArgs e, Object formType)
         {
-
+            if (sender == logoutStripMenuItem)
+            {
+                CloseFormHandler.HandleLogoutMenuItem(sender as ToolStripMenuItem,e);
+                return;
+            }
             //if is about button
             if (formType == typeof(MessageBox))
             {
@@ -175,7 +187,7 @@ namespace Eshop.CustomComponents
             }
 
             Type currentFormType = this.Parent.GetType();
-            Type formTypeToNavigate = formType;
+            Type formTypeToNavigate = (Type)formType;
 
             if (formTypeToNavigate != currentFormType)
             {
@@ -195,5 +207,7 @@ namespace Eshop.CustomComponents
             string title = "Creators";
             MessageBox.Show(msg, title);
         }
+
+        
     }
 }

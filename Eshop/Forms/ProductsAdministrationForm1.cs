@@ -1,4 +1,5 @@
-﻿using Eshop.DTOs;
+﻿using Eshop.CustomComponents;
+using Eshop.DTOs;
 using Eshop.Models.Store;
 using Eshop.Repositories;
 using Eshop.Services;
@@ -30,6 +31,7 @@ namespace Eshop.Forms
             InitProperties();
             MakeDropDownMenu();
             AddEvents();
+            MakeStaticLocation();
         }
 
         public ProductsAdministrationForm()
@@ -38,6 +40,7 @@ namespace Eshop.Forms
             InitProperties();
             MakeDropDownMenu();
             AddEvents();
+            MakeStaticLocation();
         }
 
         private void InitProperties()
@@ -118,6 +121,12 @@ namespace Eshop.Forms
             List<ProductDTO> productDTOsTemp = productService.GetAllProducts();
             ProductDTOs = new BindingList<ProductDTO>(productDTOsTemp);
             this.ProductsDataGridView.DataSource = ProductDTOs;
+        }
+
+        private void MakeStaticLocation()
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(Config.X, Config.Y);
         }
     }
 }

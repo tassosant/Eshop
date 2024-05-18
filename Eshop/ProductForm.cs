@@ -1,4 +1,5 @@
-﻿using Eshop.Models.CashRegister;
+﻿using Eshop.CustomComponents;
+using Eshop.Models.CashRegister;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace Eshop
             InitializeComponent();
             this.cart = cart;
             this.UserID = userID;
+            MakeStaticLocation();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -38,6 +40,12 @@ namespace Eshop
         {
             CartForm cartform = new CartForm(UserID);
             cartform.ShowDialog();
+        }
+
+        private void MakeStaticLocation()
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(Config.X, Config.Y);
         }
     }
 }

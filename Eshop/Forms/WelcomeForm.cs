@@ -26,12 +26,14 @@ namespace Eshop.Forms
         {
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
+            this.Dispose();
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
         {
             RegisterForm registerForm = new RegisterForm();
             registerForm.ShowDialog();
+            this.Dispose();
         }
 
         private void GuestButton_Click(object sender, EventArgs e)
