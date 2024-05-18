@@ -26,8 +26,9 @@ namespace Eshop
         CartService cartService;
         ProductService productService;
         UserService userService;
-        BindingList<ProductCartView> productCartView;
+        public BindingList<ProductCartView> ProductCartView {  get; set; }
         CartDTO cartDTO;
+
         public int UserID { get; set; }
         public CartForm(int userID)
         {
@@ -67,7 +68,7 @@ namespace Eshop
 
         private void BindDatasourceToProductsCart()
         {
-            this.ProductsDataGridView.DataSource = this.productCartView;
+            this.ProductsDataGridView.DataSource = this.ProductCartView;
 
         }
 
@@ -78,7 +79,7 @@ namespace Eshop
 
         private void UpdateCart()
         {
-            this.productCartView = (BindingList<ProductCartView>)this.ProductsDataGridView.DataSource;
+            this.ProductCartView = (BindingList<ProductCartView>)this.ProductsDataGridView.DataSource;
             ProductCartViewToCartDTO();
             cartService.SaveCart(this.cartDTO);
             RefreshDataGrid();
@@ -95,12 +96,12 @@ namespace Eshop
                 this.UserID = this.userService.GetGuestId();
             }
             this.cartDTO = this.cartService.GetOrCreateCart(this.UserID);
-            this.productCartView = CartDTOToProductCartView(this.cartDTO);
+            this.ProductCartView = CartDTOToProductCartView(this.cartDTO);
         }
 
         private BindingList<ProductCartView> CartDTOToProductCartView(CartDTO cartDTO)
         {
-            productCartView = new BindingList<ProductCartView>();
+            ProductCartView = new BindingList<ProductCartView>();
             Dictionary<Product, int> productsDict = cartDTO.Products;
             if (productsDict == null)
             {
@@ -114,16 +115,16 @@ namespace Eshop
                 productCartView.ProductName = product.Name;
                 productCartView.Quantity = quantity;
                 productCartView.ProductId = product.ProductId;
-                this.productCartView.Add(productCartView);
+                this.ProductCartView.Add(productCartView);
             }
-            return productCartView;
+            return ProductCartView;
         }
 
         private void ProductCartViewToCartDTO()
         {
 
             Dictionary<Product, int> productDict = new Dictionary<Product, int>();
-            foreach (ProductCartView productCartViewTemp in this.productCartView)
+            foreach (ProductCartView productCartViewTemp in this.ProductCartView)
             {
                 if (productCartViewTemp.Quantity > 0)
                 {

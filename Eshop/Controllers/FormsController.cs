@@ -12,7 +12,7 @@ namespace Eshop.Controllers
 {
     public static class FormsController
     {
-        private static Dictionary<Type, Form> openForms = new Dictionary<Type, Form>();
+        public static Dictionary<Type, Form> openForms = new Dictionary<Type, Form>();
 
 
         //public static void ShowForm<T>() where T : Form, new()

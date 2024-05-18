@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            richTextBox1 = new RichTextBox();
-            label2 = new Label();
+            totalPriceLabel = new Label();
             label1 = new Label();
             checkBox1 = new CheckBox();
             label3 = new Label();
@@ -53,29 +51,20 @@
             checkBox2 = new CheckBox();
             label12 = new Label();
             button1 = new Button();
-            navbar1 = new CustomComponents.Navbar(components);
+            OrderDataGridView = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)OrderDataGridView).BeginInit();
             SuspendLayout();
             // 
-            // richTextBox1
+            // totalPriceLabel
             // 
-            richTextBox1.Location = new Point(46, 72);
-            richTextBox1.Margin = new Padding(4, 4, 4, 4);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.ReadOnly = true;
-            richTextBox1.Size = new Size(259, 202);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(241, 279);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(78, 32);
-            label2.TabIndex = 4;
-            label2.Text = "label2";
-            label2.Click += label2_Click;
+            totalPriceLabel.AutoSize = true;
+            totalPriceLabel.Location = new Point(241, 279);
+            totalPriceLabel.Margin = new Padding(4, 0, 4, 0);
+            totalPriceLabel.Name = "totalPriceLabel";
+            totalPriceLabel.Size = new Size(78, 32);
+            totalPriceLabel.TabIndex = 4;
+            totalPriceLabel.Text = "label2";
+            totalPriceLabel.Click += label2_Click;
             // 
             // label1
             // 
@@ -91,7 +80,7 @@
             // 
             checkBox1.AutoSize = true;
             checkBox1.Location = new Point(46, 343);
-            checkBox1.Margin = new Padding(4, 4, 4, 4);
+            checkBox1.Margin = new Padding(4);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(192, 36);
             checkBox1.TabIndex = 5;
@@ -193,7 +182,7 @@
             // textBox1
             // 
             textBox1.Location = new Point(525, 127);
-            textBox1.Margin = new Padding(4, 4, 4, 4);
+            textBox1.Margin = new Padding(4);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(180, 39);
             textBox1.TabIndex = 15;
@@ -201,7 +190,7 @@
             // textBox2
             // 
             textBox2.Location = new Point(525, 183);
-            textBox2.Margin = new Padding(4, 4, 4, 4);
+            textBox2.Margin = new Padding(4);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(180, 39);
             textBox2.TabIndex = 16;
@@ -209,7 +198,7 @@
             // textBox3
             // 
             textBox3.Location = new Point(525, 245);
-            textBox3.Margin = new Padding(4, 4, 4, 4);
+            textBox3.Margin = new Padding(4);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(180, 39);
             textBox3.TabIndex = 17;
@@ -217,7 +206,7 @@
             // textBox4
             // 
             textBox4.Location = new Point(525, 301);
-            textBox4.Margin = new Padding(4, 4, 4, 4);
+            textBox4.Margin = new Padding(4);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(180, 39);
             textBox4.TabIndex = 18;
@@ -225,7 +214,7 @@
             // textBox5
             // 
             textBox5.Location = new Point(906, 244);
-            textBox5.Margin = new Padding(4, 4, 4, 4);
+            textBox5.Margin = new Padding(4);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(180, 39);
             textBox5.TabIndex = 22;
@@ -233,7 +222,7 @@
             // textBox6
             // 
             textBox6.Location = new Point(906, 187);
-            textBox6.Margin = new Padding(4, 4, 4, 4);
+            textBox6.Margin = new Padding(4);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(180, 39);
             textBox6.TabIndex = 21;
@@ -241,7 +230,7 @@
             // textBox7
             // 
             textBox7.Location = new Point(906, 126);
-            textBox7.Margin = new Padding(4, 4, 4, 4);
+            textBox7.Margin = new Padding(4);
             textBox7.Name = "textBox7";
             textBox7.Size = new Size(180, 39);
             textBox7.TabIndex = 20;
@@ -249,7 +238,7 @@
             // textBox8
             // 
             textBox8.Location = new Point(525, 360);
-            textBox8.Margin = new Padding(4, 4, 4, 4);
+            textBox8.Margin = new Padding(4);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(180, 39);
             textBox8.TabIndex = 19;
@@ -258,7 +247,7 @@
             // 
             checkBox2.AutoSize = true;
             checkBox2.Location = new Point(754, 359);
-            checkBox2.Margin = new Padding(4, 4, 4, 4);
+            checkBox2.Margin = new Padding(4);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(303, 36);
             checkBox2.TabIndex = 23;
@@ -278,7 +267,7 @@
             // button1
             // 
             button1.Location = new Point(489, 477);
-            button1.Margin = new Padding(4, 4, 4, 4);
+            button1.Margin = new Padding(4);
             button1.Name = "button1";
             button1.Size = new Size(231, 74);
             button1.TabIndex = 25;
@@ -286,20 +275,22 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // navbar1
+            // OrderDataGridView
             // 
-            navbar1.ImageScalingSize = new Size(32, 32);
-            navbar1.Location = new Point(0, 0);
-            navbar1.Name = "navbar1";
-            navbar1.Size = new Size(1152, 40);
-            navbar1.TabIndex = 26;
-            navbar1.Text = "navbar1";
+            OrderDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            OrderDataGridView.Location = new Point(3, 60);
+            OrderDataGridView.Name = "OrderDataGridView";
+            OrderDataGridView.RowHeadersWidth = 82;
+            OrderDataGridView.RowTemplate.Height = 41;
+            OrderDataGridView.Size = new Size(333, 224);
+            OrderDataGridView.TabIndex = 26;
             // 
             // OrderForm
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1152, 623);
+            Controls.Add(OrderDataGridView);
             Controls.Add(button1);
             Controls.Add(label12);
             Controls.Add(checkBox2);
@@ -321,22 +312,18 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(checkBox1);
-            Controls.Add(label2);
+            Controls.Add(totalPriceLabel);
             Controls.Add(label1);
-            Controls.Add(richTextBox1);
-            Controls.Add(navbar1);
-            MainMenuStrip = navbar1;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "OrderForm";
             Text = "OrderForm";
+            ((System.ComponentModel.ISupportInitialize)OrderDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private RichTextBox richTextBox1;
-        private Label label2;
+        private Label totalPriceLabel;
         private Label label1;
         private CheckBox checkBox1;
         private Label label3;
@@ -360,5 +347,6 @@
         private Label label12;
         private Button button1;
         private CustomComponents.Navbar navbar1;
+        private DataGridView OrderDataGridView;
     }
 }

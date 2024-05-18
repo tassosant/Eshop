@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Eshop.Views
 {
-    internal class ProductCartView
+    public class ProductCartView
     {
         public string ProductName {get;set;}
         public int ProductId {get;set;}

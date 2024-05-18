@@ -1,6 +1,8 @@
-﻿using Eshop.CustomComponents;
+﻿using Eshop.Controllers;
+using Eshop.CustomComponents;
 using Eshop.DTOs;
 using Eshop.Models.CashRegister;
+using Eshop.Services;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -21,25 +23,48 @@ namespace Eshop
         public int UserID { get; set; }
         ArrayList cart;
         float total;
-        
+        CartService cartService;
+        CartDTO cartDTO;
         public OrderForm(int userID)
         {
-            
+
             this.UserID = userID;
-            
+
             InitializeComponent();
-            label2.Text=total.ToString();
+            totalPriceLabel.Text = total.ToString();
             MakeStaticLocation();
-        } 
+            InitProperties();
+        }
         public OrderForm()
         {
-            
-            
-            
             InitializeComponent();
-            label2.Text=total.ToString();
+            totalPriceLabel.Text = total.ToString();
             MakeStaticLocation();
+            InitProperties();
         }
+
+        private void InitProperties()
+        {
+            this.cartService = new CartService();
+            this.cartDTO = cartService.GetOrCreateCart(UserID);
+            this.totalPriceLabel.Text = "0";
+            BindDatasourceToOrder();
+        }
+
+        private void BindDatasourceToOrder()
+        {
+            CartForm cartForm = FormsController.openForms[typeof(CartForm)] as CartForm;
+            if (cartForm == null)
+            {
+                return;
+            }
+            if (cartForm.ProductCartView == null)
+            {
+                return;
+            }
+            this.OrderDataGridView.DataSource = cartForm.ProductCartView;
+        }
+
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -54,10 +79,11 @@ namespace Eshop
                 PaypallGateForm payment = new PaypallGateForm(total);
                 payment.ShowDialog();
             }
-            else {
+            else
+            {
                 MessageBox.Show("confirm prder and shipping details");
             }
-            
+
         }
 
         private void calculateTotal(ArrayList cart)
@@ -68,7 +94,7 @@ namespace Eshop
                 total += 1;
                 //total += item.price * item.quantity;
             }
-            label2.Text = total.ToString();
+            totalPriceLabel.Text = total.ToString();
 
         }
 
@@ -78,9 +104,14 @@ namespace Eshop
         }
 
         private void MakeStaticLocation()
-        {           
+        {
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(Config.X, Config.Y);
+        }
+
+        private void OrderDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
