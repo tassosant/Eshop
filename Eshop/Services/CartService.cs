@@ -41,6 +41,10 @@ namespace Eshop.Services
 
         public CartDTO GetOrCreateCart(int userId)
         {
+            if(userId == 0)
+            {
+                return null;
+            }
             UserAbstract user = UserRepository.GetUserById(userId);
             CartMap cartMap = new CartMap();
             Cart cart = CartRepository.GetCartById(user.UserId);
@@ -92,6 +96,25 @@ namespace Eshop.Services
         public void DeleteCart(int userId)
         {
             CartRepository.DeleteCardById(userId);
+        }
+
+        public double CalculateTotalPrice(int userID)
+        {
+            if (userID == 0)
+            {
+                return 0.0;
+            }
+            CartDTO cartDTO = GetOrCreateCart(userID);
+            if (cartDTO == null)
+            {
+                return 0.0;
+            }
+            double total = 0.0;
+            foreach(Product product in cartDTO.Products.Keys)
+            {
+                total+= product.Price*cartDTO.Products[product];
+            }
+            return total;
         }
 
     }

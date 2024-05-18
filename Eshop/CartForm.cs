@@ -115,6 +115,7 @@ namespace Eshop
                 productCartView.ProductName = product.Name;
                 productCartView.Quantity = quantity;
                 productCartView.ProductId = product.ProductId;
+                productCartView.Price = product.Price.ToString();
                 this.ProductCartView.Add(productCartView);
             }
             return ProductCartView;

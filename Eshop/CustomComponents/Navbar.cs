@@ -27,6 +27,8 @@ namespace Eshop.CustomComponents
 
         private UserService UserService;
 
+        private CartService CartService;
+
         public int UserID {  get; set; }
         public Navbar()
         {
@@ -56,6 +58,7 @@ namespace Eshop.CustomComponents
             this.menuItemViews = new ArrayList();
             this.adminMenuItems = new ArrayList();
             this.UserService = new UserService();
+            this.CartService = new CartService();
             this.logoutStripMenuItem.Visible = true;
         }
         //handle not loggedin,guests and admins
@@ -168,12 +171,20 @@ namespace Eshop.CustomComponents
         {
             foreach (ToolStripMenuItem item in this.menuItems.Keys)
             {
-                item.Click += (sender, e) => NavbarItemClicked(sender, e, this.menuItems[item]);
+                item.Click += (sender, e) => NavbarItemClicked(sender, e, (Type)this.menuItems[item]);
             }
         }
 
-        private void NavbarItemClicked(object sender, EventArgs e, Object formType)
+        private void NavbarItemClicked(object sender, EventArgs e, Type formType)
         {
+            if(sender==orderFormStripMenuItem || sender==paypalGateFormStripMenuItem)
+            {
+                if (this.CartService.GetOrCreateCart(this.UserID) == null)
+                {
+                    MessageBox.Show("You must first add products to cart");
+                    return;
+                }
+            }
             if (sender == logoutStripMenuItem)
             {
                 CloseFormHandler.HandleLogoutMenuItem(sender as ToolStripMenuItem,e);
@@ -187,7 +198,7 @@ namespace Eshop.CustomComponents
             }
 
             Type currentFormType = this.Parent.GetType();
-            Type formTypeToNavigate = (Type)formType;
+            Type formTypeToNavigate = formType;
 
             if (formTypeToNavigate != currentFormType)
             {

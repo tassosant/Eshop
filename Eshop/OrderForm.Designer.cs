@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             totalPriceLabel = new Label();
             label1 = new Label();
             checkBox1 = new CheckBox();
@@ -53,6 +54,7 @@
             button1 = new Button();
             OrderDataGridView = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)OrderDataGridView).BeginInit();
+            navbar1 = new CustomComponents.Navbar(components);
             SuspendLayout();
             // 
             // totalPriceLabel
@@ -284,6 +286,15 @@
             OrderDataGridView.RowTemplate.Height = 41;
             OrderDataGridView.Size = new Size(333, 224);
             OrderDataGridView.TabIndex = 26;
+            // 
+            // navbar1
+            // 
+            navbar1.ImageScalingSize = new Size(32, 32);
+            navbar1.Location = new Point(0, 0);
+            navbar1.Name = "navbar1";
+            navbar1.Size = new Size(1152, 40);
+            navbar1.TabIndex = 26;
+            navbar1.Text = "navbar1";
             // 
             // OrderForm
             // 

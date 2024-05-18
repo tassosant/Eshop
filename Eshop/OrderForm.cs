@@ -43,21 +43,35 @@ namespace Eshop
             InitProperties();
         }
 
-        private void InitProperties()
+        public void InitProperties()
         {
             this.cartService = new CartService();
-            this.cartDTO = cartService.GetOrCreateCart(UserID);
-            this.totalPriceLabel.Text = "0";
+            //this.cartDTO = cartService.GetOrCreateCart(UserID);
+            this.totalPriceLabel.Text = this.cartService.CalculateTotalPrice(this.UserID).ToString();
+            InitDataGridView();
+            
+            
+
+        }
+
+        private void InitDataGridView()
+        {
             BindDatasourceToOrder();
+            if (this.OrderDataGridView.DataSource != null)
+            {
+                this.OrderDataGridView.Columns["ProductId"].Visible = false;
+                this.OrderDataGridView.ReadOnly = true;
+            }
         }
 
         private void BindDatasourceToOrder()
         {
-            CartForm cartForm = FormsController.openForms[typeof(CartForm)] as CartForm;
-            if (cartForm == null)
+            if (!FormsController.openForms.ContainsKey(typeof(CartForm)))
             {
                 return;
             }
+            CartForm cartForm = FormsController.openForms[typeof(CartForm)] as CartForm;
+            
             if (cartForm.ProductCartView == null)
             {
                 return;
