@@ -83,6 +83,7 @@ namespace Eshop.Forms
                     ClearFields();
                     LoginForm loginForm = new LoginForm();
                     loginForm.ShowDialog();
+                    this.Dispose();
                     //go to next form
                 }
                 Debug.WriteLine("User could not register");

@@ -38,6 +38,7 @@ namespace Eshop.Forms
                 Debug.WriteLine("User found");
                 Form1 homeUserForm = new Form1(User.UserId);
                 homeUserForm.ShowDialog();
+                this.Dispose();
             }
             else
             {
