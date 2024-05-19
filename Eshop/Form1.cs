@@ -54,7 +54,7 @@ namespace Eshop
         {
             this.navbar1.UserID = this.UserID;
             this.navbar1.CheckForPermissions();
-            this.FormClosing += new FormClosingEventHandler(CloseForm);
+            //this.FormClosing += new FormClosingEventHandler(CloseForm);
         }
 
         private void CloseForm(object sender, FormClosingEventArgs e)
