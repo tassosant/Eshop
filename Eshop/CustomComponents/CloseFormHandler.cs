@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Eshop.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -31,6 +32,11 @@ namespace Eshop.CustomComponents
                 return;
             }
             Debug.WriteLine("Closure approved:"+sender.GetType().ToString());
+            foreach(Form form in FormsController.openForms.Values)
+            {
+                
+                form.Dispose();
+            }
             sender.Dispose();
             Application.Exit();
         }

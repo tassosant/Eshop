@@ -53,8 +53,8 @@
             label12 = new Label();
             button1 = new Button();
             OrderDataGridView = new DataGridView();
-            ((System.ComponentModel.ISupportInitialize)OrderDataGridView).BeginInit();
             navbar1 = new CustomComponents.Navbar(components);
+            ((System.ComponentModel.ISupportInitialize)OrderDataGridView).BeginInit();
             SuspendLayout();
             // 
             // totalPriceLabel
@@ -325,6 +325,7 @@
             Controls.Add(checkBox1);
             Controls.Add(totalPriceLabel);
             Controls.Add(label1);
+            Controls.Add(navbar1);
             Margin = new Padding(4);
             Name = "OrderForm";
             Text = "OrderForm";

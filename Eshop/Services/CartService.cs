@@ -111,6 +111,14 @@ namespace Eshop.Services
             {
                 return 0.0;
             }
+            if(cartDTO.Products == null)
+            {
+                return 0.0;
+            }
+            if(cartDTO.Products.Count == 0 ) 
+            { 
+                return 0.0; 
+            }
             double total = 0.0;
             foreach(Product product in cartDTO.Products.Keys)
             {
