@@ -12,6 +12,7 @@ namespace Eshop.Models.CashRegister
         public int UserId { get; set; }
 
         public int CartId { get; set; }
+        public int State { get; set; }
         public Dictionary<int, int> Products { get; set; } //productId,items/product
 
 

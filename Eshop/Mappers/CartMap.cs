@@ -29,6 +29,7 @@ namespace Eshop.Mappers
         {
             Cart cart = new Cart();
             cart.CartId = cartDTO.Cart.CartId;
+            cart.State = cartDTO.Cart.State;
             cart.UserId = cartDTO.User.UserId;
             cart.Products = ConvertCartDTOProductsToCartProducts(cartDTO.Products);
             return cart;

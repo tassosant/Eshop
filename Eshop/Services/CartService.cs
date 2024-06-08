@@ -34,6 +34,7 @@ namespace Eshop.Services
             
             Cart cart = new Cart();
             cart.UserId = user.UserId;
+            cart.State = 1;
             CartRepository.Save(cart);
             return cart;
             
@@ -54,6 +55,7 @@ namespace Eshop.Services
             }
             CartDTO cartDTO = new CartDTO();
             cartDTO = cartMap.CartToCartDTO(cart, user);
+            
             return cartDTO;
         }
 
