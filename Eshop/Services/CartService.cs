@@ -33,6 +33,7 @@ namespace Eshop.Services
         {
             
             Cart cart = new Cart();
+            cart.CartId = user.UserId;
             cart.UserId = user.UserId;
             cart.State = 1;
             CartRepository.Save(cart);

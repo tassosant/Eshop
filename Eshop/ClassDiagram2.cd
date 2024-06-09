@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Eshop.BrowseProductsForm">
+    <Position X="15" Y="18" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>EwIApAggACFAQgBAgECQEwgGgINCAAAEDAJEhhCoCgA=</HashCode>
+      <FileName>BrowseProductsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.CartForm">
+    <Position X="18.25" Y="18" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAgASCACAAABHAAAjACUgCAQAIARQAgEBAAQAAAgA=</HashCode>
+      <FileName>CartForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Form1">
+    <Position X="15.25" Y="11.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAASAAAIAAAACAgAgCAAAYAAAAACQAAgAAAgA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.OrderForm">
+    <Position X="21.75" Y="18" Width="3" />
+    <TypeIdentifier>
+      <HashCode>cCAAgASAASBAABGAAACAAAhCIAAIAAAAEEBAAAGABoA=</HashCode>
+      <FileName>OrderForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.PaypallGateForm">
+    <Position X="25" Y="18" Width="3" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAQAACAAABACAACACAhSIAAIAAAAMEBAAAAAAoI=</HashCode>
+      <FileName>PaypallGateForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Program">
+    <Position X="24.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Properties.Resources" Collapsed="true">
+    <Position X="8.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAREAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Controllers.FormsController" Collapsed="true">
+    <Position X="4" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAgAAAABAAAQAAAAI=</HashCode>
+      <FileName>Controllers\FormsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.CustomComponents.CloseFormHandler" Collapsed="true">
+    <Position X="6.25" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomComponents\CloseFormHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.CustomComponents.Config" Collapsed="true">
+    <Position X="10.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>CustomComponents\Config.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.CustomComponents.LogoutType" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CustomComponents\LogoutType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.CustomComponents.Navbar">
+    <Position X="12.25" Y="1.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>lQAQAAAAQGAABICAAAGw4CgCAIAAACEAAAACAAAEgAA=</HashCode>
+      <FileName>CustomComponents\Navbar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.DTOs.CartDTO">
+    <Position X="10.25" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>DTOs\CartDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.DTOs.OrderDTO">
+    <Position X="4.25" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAABAEAAAQACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DTOs\OrderDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.DTOs.ProductDTO">
+    <Position X="2.25" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAgAgAAAAAAAAQAACAAABAAAAAAgAAAAAA=</HashCode>
+      <FileName>DTOs\ProductDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.DTOs.UserDTO">
+    <Position X="0.5" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAACAAAAAAAQAAAAgAAAAAAAACAAAAEAAAAAA=</HashCode>
+      <FileName>DTOs\UserDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Forms.LoginForm">
+    <Position X="17.75" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>EAAJAAQAACAAAAAAAACAJACiAAAAAAAACIAAAAAAgAA=</HashCode>
+      <FileName>Forms\LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Forms.ProductsAdministrationForm">
+    <Position X="28.25" Y="18" Width="3" />
+    <TypeIdentifier>
+      <HashCode>FAAAgAACADAAAABAAACAAAgiAQEAAAAgAAhAAQAAAoA=</HashCode>
+      <FileName>Forms\ProductsAdministrationForm1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Forms.RegisterForm">
+    <Position X="20.25" Y="4" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>MgCAAEQAAGAkICAQAACAIAAiFAAAIUVACOAABIAACAA=</HashCode>
+      <FileName>Forms\RegisterForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Forms.UserAdministrationForm">
+    <Position X="32" Y="18" Width="3" />
+    <TypeIdentifier>
+      <HashCode>FAAAAAAAACkAAAAAAACAoAgGABEAAAAAEABEAAACggA=</HashCode>
+      <FileName>Forms\UserAdministrationForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Forms.WelcomeForm">
+    <Position X="15.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAACAAACAAAAiAIEAAQAAAACAAAAAAAA=</HashCode>
+      <FileName>Forms\WelcomeForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Mappers.CartMap">
+    <Position X="10.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAACACAA=</HashCode>
+      <FileName>Mappers\CartMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Mappers.OrderMap">
+    <Position X="4.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAQAAAAAAAABAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappers\OrderMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Mappers.ProductMap">
+    <Position X="2.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Mappers\ProductMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Mappers.UserMap">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Mappers\UserMap.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.MockDB.JSONParser" Collapsed="true">
+    <Position X="12.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUEAACEAADABAAYAAAAACAAABgoAFAAAAAEAAAAAAAQ=</HashCode>
+      <FileName>MockDB\JSONParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Models.Account.ProfileUserAbstract">
+    <Position X="2.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAQAAAAgAAAAAAAAAAAAAAQAAgAA=</HashCode>
+      <FileName>Models\Account\ProfileUserAbstract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Models.Account.Role">
+    <Position X="8.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Account\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Models.Account.User">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Account\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Models.Account.UserAbstract">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAACAAAAAAAQAAAAgAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Account\UserAbstract.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Models.CashRegister.Cart">
+    <Position X="10.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAkQAAAAAAAAAACBBAAACCQ=</HashCode>
+      <FileName>Models\CashRegister\Cart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Models.CashRegister.Order">
+    <Position X="4.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EABAAAAAAQASAgAAAAAAAAgAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Models\CashRegister\Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Models.Store.Category">
+    <Position X="6.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Store\Category.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Models.Store.Product">
+    <Position X="2.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAQAgAgAAAAAAAAQAAAAAABAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\Store\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Repositories.CartRepository">
+    <Position X="10.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACCgAIAAAAAAAIAAAAAACEAAAAAAAEAAAAAAAAIAAAA=</HashCode>
+      <FileName>Repositories\CartRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Repositories.CategoryRepository">
+    <Position X="6.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAgBIAACAQAAAAAAAAAIAAAAAAAEAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Repositories\CategoryRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Repositories.OrderRepository">
+    <Position X="4.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQEgAYAgAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Repositories\OrderRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Repositories.ProductRepository">
+    <Position X="2.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAIAAAAAAAAABIAAAQACAAAAAAAAAAAAAAAAAQQQ=</HashCode>
+      <FileName>Repositories\ProductRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Repositories.RoleRepository">
+    <Position X="8.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAwEIAAAAAAAAAAgAAAAAAKAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\RoleRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Repositories.UserRepository">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAKAIAAAAAIABAAACAAAAAQAAAAAgEAAAAAEAAAI=</HashCode>
+      <FileName>Repositories\UserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Services.CartService">
+    <Position X="10.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gIAAAAAAAAABAAAAAQBAABAAAAACQAAAAAEAIAAAAAA=</HashCode>
+      <FileName>Services\CartService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Services.LoginFormService">
+    <Position X="17.75" Y="9.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAIAAAAA=</HashCode>
+      <FileName>Services\LoginFormService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Services.ProductsAdministrationFormService">
+    <Position X="28.25" Y="14.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAQAAAAAAAAEAAAAAACA=</HashCode>
+      <FileName>Services\ProductsAdministrationFormService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Services.ProductService">
+    <Position X="2.25" Y="13" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAIAAAAACAAAAAAAAAAAEAAAAAAQA=</HashCode>
+      <FileName>Services\ProductService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Services.RegisterFormService">
+    <Position X="20.75" Y="12.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\RegisterFormService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Services.UserService">
+    <Position X="0.5" Y="13" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAACAAAQAAAABAAAAAAAAACAAQAgAAGAAAIAEAAAA=</HashCode>
+      <FileName>Services\UserService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Views.ProductCartView">
+    <Position X="10.25" Y="19.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgAAIAAA=</HashCode>
+      <FileName>Views\ProductCartView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Views.ProductView">
+    <Position X="2.25" Y="19.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAEABAAAAAEAEAAAAAAAAAAAAAIAAEAAAAAA=</HashCode>
+      <FileName>Views\ProductView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Eshop.Views.StripMenuItemView">
+    <Position X="15.5" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAgAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Views\StripMenuItemView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

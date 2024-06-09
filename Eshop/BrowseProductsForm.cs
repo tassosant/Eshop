@@ -18,6 +18,7 @@ namespace Eshop
 {
     public partial class BrowseProductsForm : Form
     {
+        private CustomComponents.Navbar navbar1;
         ProductService productService;
         CartService cartService;
         ArrayList cart = new ArrayList();
@@ -111,6 +112,7 @@ namespace Eshop
 
         private void InitProperties()
         {
+            LoadNavbar();
             MapProductFormControlsToProductViews();
             this.productService = new ProductService();
             this.cartService = new CartService();
@@ -140,10 +142,10 @@ namespace Eshop
         private void ButtonAddProduct1_Click(object sender, EventArgs e)
         { // add teapot to cart
           // add product to cart
-            int productID = 0;
-            String productName = "product 1";
-            cart.Add(productID);
-            MessageBox.Show(productName + " is added in your cart");
+            //int productID = 0;
+            //String productName = "product 1";
+            //cart.Add(productID);
+            //MessageBox.Show(productName + " is added in your cart");
         }
 
         private void ButtonAddProduct2_Click(object sender, EventArgs e)
@@ -277,6 +279,26 @@ namespace Eshop
         {
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(Config.X, Config.Y);
+        }
+
+        private void LoadNavbar()
+        {
+            SuspendLayout();
+            components = new System.ComponentModel.Container();
+            navbar1 = new CustomComponents.Navbar(components);
+            // 
+            // navbar1
+            // 
+            navbar1.ImageScalingSize = new Size(32, 32);
+            navbar1.Location = new Point(0, 0);
+            navbar1.Name = "navbar1";
+            navbar1.Size = new Size(1040, 40);
+            navbar1.TabIndex = 2;
+            navbar1.Text = "navbar1";
+            Controls.Add(navbar1);
+            MainMenuStrip = navbar1;
+            Margin = new Padding(4, 4, 4, 4);
+            ResumeLayout(false);
         }
     }
 }

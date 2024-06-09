@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BrowseProductsForm));
             labelProduct1Name = new Label();
             labelProduct1Price = new Label();
@@ -50,7 +49,6 @@
             buttonPreviousPage = new Button();
             buttonNextPage = new Button();
             currentPageLabel = new Label();
-            navbar1 = new CustomComponents.Navbar(components);
             ((System.ComponentModel.ISupportInitialize)pictureBoxProduct1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProduct2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProduct3).BeginInit();
@@ -211,6 +209,7 @@
             button5.TabIndex = 16;
             button5.Text = "go to cart";
             button5.UseVisualStyleBackColor = true;
+            button5.Visible = false;
             button5.Click += button5_Click;
             // 
             // buttonPreviousPage
@@ -221,7 +220,7 @@
             buttonPreviousPage.FlatAppearance.BorderSize = 0;
             buttonPreviousPage.FlatStyle = FlatStyle.Flat;
             buttonPreviousPage.Location = new Point(83, 453);
-            buttonPreviousPage.Margin = new Padding(5, 5, 5, 5);
+            buttonPreviousPage.Margin = new Padding(5);
             buttonPreviousPage.Name = "buttonPreviousPage";
             buttonPreviousPage.Size = new Size(98, 64);
             buttonPreviousPage.TabIndex = 17;
@@ -236,7 +235,7 @@
             buttonNextPage.FlatAppearance.BorderSize = 0;
             buttonNextPage.FlatStyle = FlatStyle.Flat;
             buttonNextPage.Location = new Point(206, 453);
-            buttonNextPage.Margin = new Padding(5, 5, 5, 5);
+            buttonNextPage.Margin = new Padding(5);
             buttonNextPage.Name = "buttonNextPage";
             buttonNextPage.Size = new Size(98, 64);
             buttonNextPage.TabIndex = 19;
@@ -252,15 +251,6 @@
             currentPageLabel.Size = new Size(78, 32);
             currentPageLabel.TabIndex = 20;
             currentPageLabel.Text = "label1";
-            // 
-            // navbar1
-            // 
-            navbar1.ImageScalingSize = new Size(32, 32);
-            navbar1.Location = new Point(0, 0);
-            navbar1.Name = "navbar1";
-            navbar1.Size = new Size(1040, 42);
-            navbar1.TabIndex = 21;
-            navbar1.Text = "navbar1";
             // 
             // BrowseProductsForm
             // 
@@ -287,8 +277,6 @@
             Controls.Add(pictureBoxProduct1);
             Controls.Add(labelProduct1Price);
             Controls.Add(labelProduct1Name);
-            Controls.Add(navbar1);
-            MainMenuStrip = navbar1;
             Name = "BrowseProductsForm";
             Text = "BrowseProductsForm";
             Load += BrowseProductsForm_Load;
@@ -322,6 +310,6 @@
         private Button buttonPreviousPage;
         private Button buttonNextPage;
         private Label currentPageLabel;
-        private CustomComponents.Navbar navbar1;
+        
     }
 }

@@ -62,10 +62,10 @@ namespace Eshop.Repositories
         public void AddCart(Cart cart)
         {
             List<Cart> carts = GetAllCarts().OrderBy(cart => cart.CartId).ToList();
-            if (cart.CartId != guestId)
-            {
-                cart.CartId = carts.Last().CartId + 1;
-            }
+            //if (cart.UserId != guestId)
+            //{
+            //    cart.CartId = carts.Last().CartId + 1;
+            //}
             Carts.Add(cart);
             Parser.OverwriteCartsJSON(Carts);
         }
