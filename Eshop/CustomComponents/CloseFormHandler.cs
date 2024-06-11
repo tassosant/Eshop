@@ -20,7 +20,7 @@ namespace Eshop.CustomComponents
                 return;
             }
             sender.GetCurrentParent().Parent.Dispose();
-            Application.Exit();
+            Application.Exit(); // eva: eskase
         }
 
         public static void HandleClosingForm(Form sender,FormClosingEventArgs e)

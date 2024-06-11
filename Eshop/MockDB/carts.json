@@ -1,1 +1,1 @@
-[{"UserId":2,"CartId":2,"State":0,"Products":{"2":20,"3":200}},{"UserId":3,"CartId":11,"State":0,"Products":null},{"UserId":1,"CartId":1,"State":1,"Products":null},{"UserId":100,"CartId":100,"State":1,"Products":{"1":10,"2":1}}]
+[{"UserId":3,"CartId":11,"State":0,"Products":null},{"UserId":1,"CartId":1,"State":1,"Products":null}]
